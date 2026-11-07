@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organisms and Populations — KCET &amp; NEET PYQ Portal (110 Questions)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .q-card {
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm no-print">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <button id="brandHomeBtn" type="button" class="flex items-center gap-2.5 text-left group">
+          <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-extrabold text-sm shadow-sm group-hover:bg-emerald-700 transition">ECO</div>
+          <div>
+            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Organisms and Populations</h1>
+            <p class="text-xs text-slate-500">KCET &amp; NEET PYQ Question Banks &bull; 110 Questions (2000–2026)</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs sm:text-sm font-semibold text-slate-600">
+        <button id="navHomeBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white text-emerald-700 shadow-xs transition">Home Portal</button>
+        <button id="navKcetBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">KCET Bank (50)</button>
+        <button id="navNeetBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">NEET PYQ Bank (60)</button>
+        <button id="navNotesBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">Revision Notes</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+
+    <!-- VIEW 1: HOME PORTAL DASHBOARD -->
+    <section id="homeView" class="space-y-6">
+      <!-- Hero Banner -->
+      <div class="rounded-2xl bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white p-6 sm:p-8 shadow-md">
+        <span class="inline-block px-3 py-1 bg-white/10 text-emerald-200 text-xs font-semibold rounded-full mb-3 tracking-wide">
+          Complete Biology Exam Preparation Portal &bull; NCERT Class 12 Chapter 11 (Unit X: Ecology)
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+          Organisms and Populations: KCET &amp; NEET PYQ Portal
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-3xl leading-relaxed mb-6">
+          Practice 110 authentic previous year questions from KCET (2014–2026) and AIPMT/NEET (2000–2026, including Re-NEET 2026, NEET 2025, NEET 2024, and NTA 304 E). Covers per capita birth/death rate formulas, age pyramid dynamics, exponential and Verhulst-Pearl logistic growth equations, life history strategies, and interspecific population interactions (Predation, Competition, Parasitism, Commensalism, Mutualism, Amensalism).
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="heroStartKcetBtn" type="button" class="px-5 py-2.5 rounded-xl bg-white text-emerald-950 font-bold text-sm shadow hover:bg-slate-100 transition">
+            Open KCET Bank (50 Qs)
+          </button>
+          <button id="heroStartNeetBtn" type="button" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow hover:bg-emerald-700 transition">
+            Open NEET PYQ Bank (60 Qs)
+          </button>
+          <button id="heroOpenNotesBtn" type="button" class="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-200 font-semibold text-sm hover:bg-slate-700 transition">
+            View Revision Notes
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Statistics & Progress Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Question Bank</p>
+          <p class="text-2xl font-extrabold text-slate-900 mt-1">110 Questions</p>
+          <p class="text-xs text-slate-500 mt-1">50 KCET + 60 NEET PYQ items (2000–2026)</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider">KCET Practice Progress</p>
+          <p id="statKcetProgress" class="text-2xl font-extrabold text-emerald-700 mt-1">0 / 50</p>
+          <p id="statKcetScore" class="text-xs text-slate-500 mt-1">Score: 0 correct (0%)</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <p class="text-xs font-bold text-teal-600 uppercase tracking-wider">NEET PYQ Progress</p>
+          <p id="statNeetProgress" class="text-2xl font-extrabold text-teal-700 mt-1">0 / 60</p>
+          <p id="statNeetScore" class="text-xs text-slate-500 mt-1">Score: 0 correct (0%)</p>
+        </div>
+      </div>
+
+      <!-- Module Selection Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <!-- Module 1: KCET Bank -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-emerald-300 transition">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold">Module 1 &bull; Q1–Q50</span>
+              <span class="text-xs font-semibold text-slate-400">50 MCQs</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">KCET Ecology Question Bank (2014–2026)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Includes all latest questions from <strong>KCET 2026</strong> (Q45: Exponential growth limitations; Q46: Age pyramids stable/expanding/declining; Q50: Tropical vs temperate latitudinal gradient; Q53: Fruitfly per capita death rate 8/80 = 0.1) and <strong>KCET 2025</strong> (Q52: Natality &amp; immigration density increase; Q57: Equator to poles species gradient).
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5">&bull; Complete coverage of Karnataka CET from 2014 through 2026</li>
+              <li class="flex items-center gap-1.5">&bull; Instant switch between Document View and Practice Quiz modes</li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-3 pt-2">
+            <button id="cardKcetDocBtn" type="button" class="flex-1 py-2 rounded-xl bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition">
+              Read Question Bank
+            </button>
+            <button id="cardKcetQuizBtn" type="button" class="flex-1 py-2 rounded-xl bg-emerald-50 text-emerald-700 font-semibold text-xs hover:bg-emerald-100 transition">
+              Start Practice Quiz
+            </button>
+          </div>
+        </div>
+
+        <!-- Module 2: NEET PYQ Bank -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-teal-300 transition">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-teal-50 text-teal-700 text-xs font-bold">Module 2 &bull; Q1–Q60</span>
+              <span class="text-xs font-semibold text-slate-400">60 MCQs</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">NEET &amp; AIPMT PYQ Bank (2000–2026)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Comprehensive national entrance collection including <strong>Re-NEET 2026</strong> (Q161: 10M cells birth/death rate calculation; Q163: Logistic vs Exponential assertion-reason; Q165: Verhulst-Pearl equation; Q172: Abingdon tortoise extinction due to browsing goats; Q174: Interaction matching matrix), <strong>NEET 2025</strong> (Q110: Epiphyte orchid commensalism; Q123: Father of Indian Ecology Prof. Ramdeo Misra; Q141: Fig-wasp mutualism; Q178: Logistic equation), <strong>NEET 2024</strong> (Q139: Sexual deceit in Ophrys; Q165: Logistic model; Q180: Interacting species symbols), and <strong>NTA 304 E</strong> (Q22: Interspecific relationships; Q23: Stable pyramid; Q24: Resource partitioning).
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5">&bull; Rigorous matching tables, multi-statement, and numerical items</li>
+              <li class="flex items-center gap-1.5">&bull; Comprehensive NCERT rationales and quick answer matrix</li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-3 pt-2">
+            <button id="cardNeetDocBtn" type="button" class="flex-1 py-2 rounded-xl bg-teal-600 text-white font-semibold text-xs hover:bg-teal-700 transition">
+              Read Question Bank
+            </button>
+            <button id="cardNeetQuizBtn" type="button" class="flex-1 py-2 rounded-xl bg-teal-50 text-teal-700 font-semibold text-xs hover:bg-teal-100 transition">
+              Start Practice Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: QUESTION BANK VIEW (FOR KCET & NEET) -->
+    <section id="bankView" class="hidden space-y-5">
+      <!-- Bank Toolbar & Controls -->
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-xs flex flex-wrap items-center justify-between gap-4 no-print">
+        <div>
+          <h2 id="bankTitle" class="text-xl font-bold text-slate-900">Question Bank</h2>
+          <p id="bankSubtitle" class="text-xs text-slate-500">Karnataka CET &bull; Aligned NCERT Previous Year Questions</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- View Mode Toggle -->
+          <div class="flex items-center bg-slate-100 p-1 rounded-xl text-xs font-bold text-slate-600">
+            <button id="modeDocBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white text-emerald-700 shadow-xs transition">Document View</button>
+            <button id="modeQuizBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">Practice Quiz</button>
+          </div>
+
+          <!-- Answer Key Toggle -->
+          <button id="toggleAnswersBtn" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50 transition">
+            Hide Answer Badges
+          </button>
+
+          <!-- Print / PDF Export Button -->
+          <button id="printBtn" type="button" class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition">
+            Print / Save as PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Quiz Score Banner (visible in Quiz Mode) -->
+      <div id="quizScoreBanner" class="hidden bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3 text-emerald-900 no-print">
+        <div class="flex items-center gap-4 text-xs sm:text-sm font-semibold">
+          <span>Attempted: <strong id="quizAttemptedCount" class="text-emerald-700 font-extrabold">0</strong></span>
+          <span>Correct: <strong id="quizCorrectCount" class="text-teal-700 font-extrabold">0</strong></span>
+          <span>Wrong: <strong id="quizWrongCount" class="text-rose-700 font-extrabold">0</strong></span>
+          <span>Accuracy: <strong id="quizAccuracy" class="text-emerald-700 font-extrabold">0%</strong></span>
+        </div>
+        <button id="resetQuizBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-300 text-xs font-bold text-emerald-700 hover:bg-emerald-100 transition">
+          Reset All Answers
+        </button>
+      </div>
+
+      <!-- Filters & Instant Search -->
+      <div class="bg-white rounded-xl border border-slate-200 p-3 shadow-xs space-y-3 no-print">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex-1 min-w-[240px]">
+            <input id="searchInput" type="text" placeholder="Search keywords (e.g. Verhulst-Pearl, Ophrys, Abingdon, commensalism, death rate, warblers)..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          </div>
+          <span id="filteredCountBadge" class="text-xs font-bold text-slate-500">Showing all items</span>
+        </div>
+
+        <!-- Topic Pills -->
+        <div id="topicPillsContainer" class="flex flex-wrap gap-1.5 text-xs">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Question List Container -->
+      <div id="questionsContainer" class="space-y-4">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Master Answer Key Matrix (At Bottom) -->
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <h3 class="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">Quick Answer Key Matrix</h3>
+        <div id="answerKeyMatrix" class="grid grid-cols-5 sm:grid-cols-10 md:grid-cols-12 gap-1.5 text-xs font-bold">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: NCERT HIGH-YIELD REVISION NOTES -->
+    <section id="notesView" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+        <div class="border-b border-slate-100 pb-4 mb-6">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-xs font-bold">NCERT Class 12 Chapter 11</span>
+          <h2 class="text-2xl font-extrabold text-slate-900 mt-2">Organisms and Populations — High-Yield Revision Summary</h2>
+          <p class="text-xs text-slate-500 mt-1">Core ecological concepts, formulas, population growth models, life history strategies, and interspecific interaction matrices.</p>
+        </div>
+
+        <!-- Section 1: Father of Indian Ecology -->
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed mb-8">
+          <h3 class="text-base font-bold text-emerald-900 border-b border-emerald-100 pb-2 flex items-center gap-2">
+            1. History &amp; Ecological Levels of Organisation
+          </h3>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <p>&bull; <strong>Father of Ecology in India:</strong> <strong>Prof. Ramdeo Misra</strong> (1908–1998). Established the first postgraduate course in ecology at Banaras Hindu University (BHU), Varanasi. Formulated the National Committee for Environmental Planning and Coordination (1972) leading to the Ministry of Environment and Forests (1984).</p>
+            <p>&bull; <strong>Four Levels of Biological Organisation in Ecology:</strong> Organisms &rarr; Populations &rarr; Communities &rarr; Biomes.</p>
+          </div>
+        </div>
+
+        <!-- Section 2: Population Attributes & Equations -->
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed mb-8">
+          <h3 class="text-base font-bold text-emerald-900 border-b border-emerald-100 pb-2 flex items-center gap-2">
+            2. Population Attributes &amp; Density Dynamics
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+              <p class="font-bold text-slate-900">Population Rates &amp; Density</p>
+              <p>&bull; <strong>Birth rate (Natality) &amp; Death rate (Mortality):</strong> Expressed as <em>per capita</em> change. E.g., 8 dead out of 80 fruit flies in a week = 8/80 = <strong>0.1 individuals per fruitfly per week</strong>.</p>
+              <p>&bull; <strong>Density Equation:</strong> $N_{t+1} = N_t + [(B + I) - (D + E)]$</p>
+              <p>&bull; <strong>Increasing density factors:</strong> Natality (B) and Immigration (I).</p>
+              <p>&bull; <strong>Decreasing density factors:</strong> Mortality (D) and Emigration (E).</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+              <p class="font-bold text-slate-900">Age Pyramids for Human Population</p>
+              <p>&bull; <strong>Expanding (Growing):</strong> Triangular pyramid with large pre-reproductive base.</p>
+              <p>&bull; <strong>Stable:</strong> Bell-shaped pyramid with pre-reproductive and reproductive age groups nearly equal.</p>
+              <p>&bull; <strong>Declining:</strong> Urn-shaped pyramid with constricted pre-reproductive base.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Growth Models (Exponential vs Logistic) -->
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed mb-8">
+          <h3 class="text-base font-bold text-emerald-900 border-b border-emerald-100 pb-2 flex items-center gap-2">
+            3. Population Growth Curves &amp; Mathematical Models
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <h4 class="font-bold text-slate-900">Exponential Growth (J-shaped Curve)</h4>
+              <p>&bull; Occurs when resources (food and space) are <strong>unlimited</strong>.</p>
+              <p>&bull; Differential equation: $\frac{dN}{dt} = (b - d)N = rN$</p>
+              <p>&bull; Integral form: $N_t = N_0 e^{rt}$</p>
+              <p>&bull; <em>r</em> is the <strong>intrinsic rate of natural increase</strong>. Values: Norway rat = 0.015, flour beetle = 0.12, human in India (1981) = 0.0205.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+              <h4 class="font-bold text-slate-900">Verhulst-Pearl Logistic Growth (Sigmoid Curve)</h4>
+              <p>&bull; Realistic model because environmental resources are <strong>finite and limiting</strong>.</p>
+              <p>&bull; Differential equation: $\frac{dN}{dt} = rN\left(\frac{K - N}{K}\right)$</p>
+              <p>&bull; <em>K</em> = <strong>Carrying capacity</strong> (maximum population habitat can support).</p>
+              <p>&bull; Phases: Lag phase &rarr; Acceleration &rarr; Deceleration &rarr; Asymptote (at $N = K$).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Interspecific Population Interactions -->
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <h3 class="text-base font-bold text-emerald-900 border-b border-emerald-100 pb-2 flex items-center gap-2">
+            4. Summary of Interspecific Interactions (NCERT Table 11.1)
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse border border-slate-200 text-xs">
+              <thead class="bg-slate-100 font-bold text-slate-800">
+                <tr>
+                  <th class="border border-slate-200 p-2">Interaction</th>
+                  <th class="border border-slate-200 p-2 text-center">Species A</th>
+                  <th class="border border-slate-200 p-2 text-center">Species B</th>
+                  <th class="border border-slate-200 p-2">Classic NCERT Field Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-200 p-2 font-bold">Mutualism</td>
+                  <td class="border border-slate-200 p-2 text-center text-emerald-700 font-bold">+</td>
+                  <td class="border border-slate-200 p-2 text-center text-emerald-700 font-bold">+</td>
+                  <td class="border border-slate-200 p-2">Lichens (fungus + alga), Mycorrhiza (Glomus + roots), Fig tree &amp; blastophaga wasp, Mediterranean orchid <em>Ophrys</em> &amp; male bee (sexual deceit / pseudocopulation).</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="border border-slate-200 p-2 font-bold">Competition</td>
+                  <td class="border border-slate-200 p-2 text-center text-rose-700 font-bold">-</td>
+                  <td class="border border-slate-200 p-2 text-center text-rose-700 font-bold">-</td>
+                  <td class="border border-slate-200 p-2">Flamingoes &amp; resident fish competing for zooplankton in South American lakes; Abingdon tortoise in Galapagos extinct after goats introduced; Barnacle <em>Balanus</em> excluding <em>Chthamalus</em>; MacArthur's 5 warbler species coexisting via <strong>resource partitioning</strong>.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-200 p-2 font-bold">Predation</td>
+                  <td class="border border-slate-200 p-2 text-center text-emerald-700 font-bold">+</td>
+                  <td class="border border-slate-200 p-2 text-center text-rose-700 font-bold">-</td>
+                  <td class="border border-slate-200 p-2">Tiger &amp; deer; sparrow eating seed; Prickly pear cactus in Australia controlled by cactophagous moth; Starfish <em>Pisaster</em> maintaining intertidal diversity; <em>Calotropis</em> producing poisonous cardiac glycosides against herbivores; Monarch butterfly distasteful due to weed toxin.</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="border border-slate-200 p-2 font-bold">Parasitism</td>
+                  <td class="border border-slate-200 p-2 text-center text-emerald-700 font-bold">+</td>
+                  <td class="border border-slate-200 p-2 text-center text-rose-700 font-bold">-</td>
+                  <td class="border border-slate-200 p-2">Human liver fluke (two intermediate hosts: snail and fish); Malarial parasite &amp; mosquito vector; Ectoparasites: lice on humans, ticks on dogs, marine copepods on fish, <em>Cuscuta</em> on hedge plants; <strong>Brood parasitism</strong>: Cuckoo (koel) laying eggs in crow's nest.</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-200 p-2 font-bold">Commensalism</td>
+                  <td class="border border-slate-200 p-2 text-center text-emerald-700 font-bold">+</td>
+                  <td class="border border-slate-200 p-2 text-center text-slate-500 font-bold">0</td>
+                  <td class="border border-slate-200 p-2">Orchid growing as an epiphyte on a mango branch; Barnacles on back of whale; Cattle egret foraging near grazing cattle; Sea anemone with stinging tentacles hosting clown fish.</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="border border-slate-200 p-2 font-bold">Amensalism</td>
+                  <td class="border border-slate-200 p-2 text-center text-rose-700 font-bold">-</td>
+                  <td class="border border-slate-200 p-2 text-center text-slate-500 font-bold">0</td>
+                  <td class="border border-slate-200 p-2"><em>Penicillium</em> secreting penicillin that inhibits bacterial growth without benefit/harm to itself.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500 no-print">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="font-semibold text-slate-700">Organisms and Populations — High-Yield Examination Preparation Portal</p>
+      <p class="mt-1">Compiled with authentic KCET (2014–2026) and NEET/AIPMT (2000–2026) question papers and NCERT Class 12 Biology guidelines.</p>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE SCRIPT -->
+  <script>
+    const KCET_DATA = [
+      {"topic": "Population Growth Models", "tag": "KCET 2026", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2026 Biology Paper (Q45)", "stem": "Which of the following is NOT correct with reference to the exponential growth model of a population?", "extras": [], "options": [{"marker": "A", "text": "Resources are limited"}, {"marker": "B", "text": "Population grows in a geometric fashion"}, {"marker": "C", "text": "A stationary phase is never reached"}, {"marker": "D", "text": "Population grows beyond carrying capacity"}], "answerIndex": 0, "explanation": "In exponential growth, resources (food and space) are assumed to be UNLIMITED. Saying 'resources are limited' describes logistic growth, not exponential growth.", "num": 1},
+      {"topic": "Population Attributes & Age Pyramids", "tag": "KCET 2026", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2026 Biology Paper (Q46)", "stem": "The age distribution of a population reflects its growth status. Match the age pyramid shapes:\nA - Triangular (broad pre-reproductive base)\nB - Bell-shaped (pre-reproductive equals reproductive)\nC - Urn-shaped (constricted pre-reproductive base)\nIdentify the growth status of A, B, and C respectively:", "extras": [], "options": [{"marker": "A", "text": "A - stable, B - expanding, C - declining"}, {"marker": "B", "text": "A - expanding, B - stable, C - declining"}, {"marker": "C", "text": "A - stable, B - declining, C - expanding"}, {"marker": "D", "text": "A - declining, B - stable, C - expanding"}], "answerIndex": 1, "explanation": "According to NCERT Figure 11.1: Triangular pyramid with high pre-reproductive proportion is Expanding; Bell-shaped pyramid is Stable; Urn-shaped pyramid with constricted base is Declining.", "num": 2},
+      {"topic": "Population Attributes", "tag": "KCET 2026", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2026 Biology Paper (Q53)", "stem": "If 8 individuals in a laboratory population of 80 fruit flies died during a specified time interval, the death rate in the population during that period is:", "extras": [], "options": [{"marker": "A", "text": "0.01 individual/time interval"}, {"marker": "B", "text": "0.001 individual/time interval"}, {"marker": "C", "text": "0.1 individual/time interval"}, {"marker": "D", "text": "1 individual/time interval"}], "answerIndex": 2, "explanation": "Per capita death rate = Number of deaths / Initial population size = 8 / 80 = 0.1 individuals per fruit fly per time interval.", "num": 3},
+      {"topic": "Population Attributes & Density", "tag": "KCET 2025", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2025 Biology Paper (Q52)", "stem": "Which one of the following pairs of population attributes contributes to an increase in population density?", "extras": [], "options": [{"marker": "A", "text": "Natality and Immigration"}, {"marker": "B", "text": "Mortality and Emigration"}, {"marker": "C", "text": "Natality and Emigration"}, {"marker": "D", "text": "Mortality and Immigration"}], "answerIndex": 0, "explanation": "Population density increases due to Natality (number of births, B) and Immigration (inflow of individuals, I), whereas Mortality (D) and Emigration (E) decrease population density.", "num": 4},
+      {"topic": "Population Attributes", "tag": "KCET 2025", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2025 Biology Paper (Q53)", "stem": "If 8 fruit flies died in a laboratory culture of 80 flies in a week, calculate the per capita death rate of the population per week:", "extras": [], "options": [{"marker": "A", "text": "0.1"}, {"marker": "B", "text": "0.01"}, {"marker": "C", "text": "0.8"}, {"marker": "D", "text": "0.008"}], "answerIndex": 0, "explanation": "Death rate = Deaths / Total population = 8 / 80 = 0.1 individuals per fruitfly per week.", "num": 5},
+      {"topic": "Latitudinal Gradients & Diversity", "tag": "KCET 2025", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2025 Biology Paper (Q57)", "stem": "In ecological distribution, species diversity ________ as we move away from the ________ towards ________.", "extras": [], "options": [{"marker": "A", "text": "Increases, Equator, Poles"}, {"marker": "B", "text": "Decreases, Equator, Poles"}, {"marker": "C", "text": "Decreases, Poles, Equator"}, {"marker": "D", "text": "Remains stable, Equator, Poles"}], "answerIndex": 1, "explanation": "Species diversity decreases as we move away from the equator towards the poles, known as the latitudinal gradient in species diversity.", "num": 6},
+      {"topic": "Population Growth Models", "tag": "KCET 2024", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2024 Biology Paper", "stem": "The logistic population growth model is mathematically expressed by the Verhulst-Pearl equation as:", "extras": [], "options": [{"marker": "A", "text": "dN/dt = rN((K - N)/K)"}, {"marker": "B", "text": "dN/dt = rN((N - K)/N)"}, {"marker": "C", "text": "dN/dt = rN(K/(K - N))"}, {"marker": "D", "text": "dN/dt = rN(1 - K/N)"}], "answerIndex": 0, "explanation": "The Verhulst-Pearl logistic growth equation is dN/dt = rN((K - N)/K), where N = population density, r = intrinsic rate of natural increase, and K = carrying capacity.", "num": 7},
+      {"topic": "Population Interactions: Commensalism", "tag": "KCET 2024", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2024 Biology Paper", "stem": "An orchid growing as an epiphyte on a mango tree branch is an example of which ecological interaction?", "extras": [], "options": [{"marker": "A", "text": "Parasitism"}, {"marker": "B", "text": "Mutualism"}, {"marker": "C", "text": "Commensalism"}, {"marker": "D", "text": "Amensalism"}], "answerIndex": 2, "explanation": "In commensalism (+, 0), one species benefits while the other is neither harmed nor benefited. The orchid gets physical support and light, while the mango tree is unaffected.", "num": 8},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2023", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2023 Biology Paper", "stem": "Connell's field experiments on the rocky sea coasts of Scotland showed that the larger and competitively superior barnacle Balanus dominates the intertidal area and excludes:", "extras": [], "options": [{"marker": "A", "text": "Chthamalus"}, {"marker": "B", "text": "Pisaster"}, {"marker": "C", "text": "Abingdon tortoise"}, {"marker": "D", "text": "Monarch butterfly"}], "answerIndex": 0, "explanation": "Connell showed that Balanus competitively excludes the smaller barnacle Chthamalus from the intertidal zone.", "num": 9},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2023", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2023 Biology Paper", "stem": "MacArthur showed that five closely related species of warblers living on the same tree were able to avoid competition and coexist due to:", "extras": [], "options": [{"marker": "A", "text": "Behavioural differences in foraging activities (Resource partitioning)"}, {"marker": "B", "text": "Competitive exclusion of four species"}, {"marker": "C", "text": "Feeding on different tree species"}, {"marker": "D", "text": "Brood parasitism"}], "answerIndex": 0, "explanation": "MacArthur demonstrated resource partitioning: 5 species of warblers coexisted on the same spruce tree by foraging in different zones and at different times.", "num": 10},
+      {"topic": "Population Interactions: Parasitism", "tag": "KCET 2022", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2022 Biology Paper", "stem": "Cuscuta, a parasitic plant commonly found growing on hedge plants, has lost its chlorophyll and leaves during evolution. It is a:", "extras": [], "options": [{"marker": "A", "text": "Partial stem parasite"}, {"marker": "B", "text": "Total stem parasite (Ectoparasite on host)"}, {"marker": "C", "text": "Symbiont"}, {"marker": "D", "text": "Endoparasite"}], "answerIndex": 1, "explanation": "Cuscuta is a non-green parasitic plant (ectoparasite) that derives all nutrition from host vascular tissues via haustoria.", "num": 11},
+      {"topic": "Population Interactions: Mutualism", "tag": "KCET 2022", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2022 Biology Paper", "stem": "The Mediterranean orchid Ophrys employs 'sexual deceit' to get pollinated by:", "extras": [], "options": [{"marker": "A", "text": "A species of bee / bumblebee"}, {"marker": "B", "text": "Female fig wasp"}, {"marker": "C", "text": "Moths"}, {"marker": "D", "text": "Hummingbirds"}], "answerIndex": 0, "explanation": "Ophrys petal mimics the female bee in size, colour, and markings. Male bees pseudocopulate with the petal and transfer pollen.", "num": 12},
+      {"topic": "Population Interactions: Predation", "tag": "KCET 2021", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2021 Biology Paper", "stem": "The prickly pear cactus introduced into Australia in the 1920s was brought under control by introducing a natural predator, which was:", "extras": [], "options": [{"marker": "A", "text": "A cactus-feeding moth"}, {"marker": "B", "text": "Ladybird beetle"}, {"marker": "C", "text": "Dragonfly"}, {"marker": "D", "text": "Co-evolved virus"}], "answerIndex": 0, "explanation": "The invasive prickly pear cactus in Australia was controlled biologically by introducing its natural predator from America, the cactophagous moth Cactoblastis cactorum.", "num": 13},
+      {"topic": "Population Interactions: Mutualism", "tag": "KCET 2021", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2021 Biology Paper", "stem": "The symbiotic mutualistic association between fungi and the roots of higher plants is called:", "extras": [], "options": [{"marker": "A", "text": "Lichen"}, {"marker": "B", "text": "Mycorrhiza"}, {"marker": "C", "text": "Commensalism"}, {"marker": "D", "text": "Amensalism"}], "answerIndex": 1, "explanation": "Mycorrhizae (e.g. Glomus) are mutualistic associations where fungi absorb phosphorus and minerals for the plant, receiving carbohydrates in return.", "num": 14},
+      {"topic": "Population Interactions: Predation", "tag": "KCET 2020", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2020 Biology Paper", "stem": "When the predatory starfish Pisaster was experimentally removed from an enclosed intertidal rocky area, what happened to species diversity?", "extras": [], "options": [{"marker": "A", "text": "More than 10 species of invertebrates became extinct due to interspecific competition"}, {"marker": "B", "text": "Invertebrate species richness doubled"}, {"marker": "C", "text": "Pisaster was replaced by Balanus"}, {"marker": "D", "text": "Algal blooms developed"}], "answerIndex": 0, "explanation": "Pisaster keeps competing prey species in check. Removing Pisaster led to competitive exclusion, wiping out >10 invertebrate species within a year.", "num": 15},
+      {"topic": "Population Attributes & Census", "tag": "KCET 2020", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2020 Biology Paper", "stem": "The tiger census in Indian national parks and tiger reserves is often estimated indirectly based on:", "extras": [], "options": [{"marker": "A", "text": "Pug marks and fecal pellets"}, {"marker": "B", "text": "Camera traps only"}, {"marker": "C", "text": "Direct physical head count of all individuals"}, {"marker": "D", "text": "Satellite tracking of all animals"}], "answerIndex": 0, "explanation": "NCERT notes that the national tiger census is routinely conducted via indirect sampling based on pug marks and fecal pellets.", "num": 16},
+      {"topic": "Population Growth Models", "tag": "KCET 2019", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2019 Biology Paper", "stem": "In the logistic growth equation dN/dt = rN((K - N)/K), the term (K - N)/K represents:", "extras": [], "options": [{"marker": "A", "text": "Environmental resistance / carrying capacity buffer"}, {"marker": "B", "text": "Biotic potential"}, {"marker": "C", "text": "Intrinsic rate of increase"}, {"marker": "D", "text": "Total population density"}], "answerIndex": 0, "explanation": "The term (K - N)/K reflects environmental resistance, dampening growth rate as population density approaches carrying capacity K.", "num": 17},
+      {"topic": "Population Interactions: Parasitism", "tag": "KCET 2019", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2019 Biology Paper", "stem": "The parasitic bird laying its eggs in the nest of another host bird and letting the host incubate them is known as:", "extras": [], "options": [{"marker": "A", "text": "Brood parasitism"}, {"marker": "B", "text": "Ectoparasitism"}, {"marker": "C", "text": "Endoparasitism"}, {"marker": "D", "text": "Hyperparasitism"}], "answerIndex": 0, "explanation": "Brood parasitism occurs when a bird (e.g. cuckoo/koel) lays eggs in the nest of its host (e.g. crow) that closely resemble host eggs in size and colour.", "num": 18},
+      {"topic": "Population Attributes", "tag": "KCET 2018", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2018 Biology Paper", "stem": "If in a pond there were 20 lotus plants last year and through reproduction 8 new plants are added, the birth rate is:", "extras": [], "options": [{"marker": "A", "text": "0.4 offspring per lotus per year"}, {"marker": "B", "text": "0.2 offspring per lotus per year"}, {"marker": "C", "text": "0.8 offspring per lotus per year"}, {"marker": "D", "text": "2.5 offspring per lotus per year"}], "answerIndex": 0, "explanation": "Birth rate = New individuals added / Initial population = 8 / 20 = 0.4 offspring per lotus per year.", "num": 19},
+      {"topic": "Population Growth Models", "tag": "KCET 2018", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2018 Biology Paper", "stem": "When population density (N) plotted against time (t) results in a sigmoid S-shaped curve, it is characteristic of:", "extras": [], "options": [{"marker": "A", "text": "Verhulst-Pearl Logistic Growth"}, {"marker": "B", "text": "Exponential Growth"}, {"marker": "C", "text": "Geometric Growth"}, {"marker": "D", "text": "Linear Growth"}], "answerIndex": 0, "explanation": "Logistic growth with limited resources produces an S-shaped sigmoid curve with lag, acceleration, deceleration, and asymptote phases.", "num": 20},
+      {"topic": "Population Interactions: Predation", "tag": "KCET 2017", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2017 Biology Paper", "stem": "The weed Calotropis growing in abandoned fields produces which chemical defense against browsing herbivores?", "extras": [], "options": [{"marker": "A", "text": "Poisonous cardiac glycosides"}, {"marker": "B", "text": "Nicotine"}, {"marker": "C", "text": "Quinine"}, {"marker": "D", "text": "Morphine"}], "answerIndex": 0, "explanation": "Calotropis produces highly poisonous cardiac glycosides, preventing cattle and goats from browsing on it.", "num": 21},
+      {"topic": "Population Interactions: Commensalism", "tag": "KCET 2017", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2017 Biology Paper", "stem": "The association between cattle egrets and grazing cattle is an example of:", "extras": [], "options": [{"marker": "A", "text": "Commensalism"}, {"marker": "B", "text": "Mutualism"}, {"marker": "C", "text": "Parasitism"}, {"marker": "D", "text": "Amensalism"}], "answerIndex": 0, "explanation": "Grazing cattle flush out insects from grass, which the egrets feed on (+). The cattle derive no benefit or harm (0).", "num": 22},
+      {"topic": "Population Interactions: Predation", "tag": "KCET 2016", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2016 Biology Paper", "stem": "The Monarch butterfly avoids predation by birds because it is highly distasteful due to:", "extras": [], "options": [{"marker": "A", "text": "A special chemical acquired during its caterpillar stage by feeding on a poisonous weed"}, {"marker": "B", "text": "Bright aposematic warning coloration only"}, {"marker": "C", "text": "Sharp thoracic spines"}, {"marker": "D", "text": "Stinging tentacles"}], "answerIndex": 0, "explanation": "Monarch butterfly caterpillars feed on a toxic milkweed, sequestering cardiac toxins that make the adult butterfly unpalatable to birds.", "num": 23},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2016", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2016 Biology Paper", "stem": "Gause's 'Competitive Exclusion Principle' states that:", "extras": [], "options": [{"marker": "A", "text": "Two closely related species competing for the same limiting resources cannot coexist indefinitely"}, {"marker": "B", "text": "Larger organisms always outcompete smaller organisms"}, {"marker": "C", "text": "Species always partition resources to avoid extinction"}, {"marker": "D", "text": "Predators eliminate prey completely"}], "answerIndex": 0, "explanation": "Gause stated that two closely related species competing for the exact same limiting resource cannot coexist indefinitely; the inferior competitor is eventually eliminated.", "num": 24},
+      {"topic": "Population Attributes & Biomass", "tag": "KCET 2015", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2015 Biology Paper", "stem": "In an area with 200 Parthenium plants and a single large banyan tree, the most meaningful measure of population density for the banyan tree is:", "extras": [], "options": [{"marker": "A", "text": "Total number of individuals"}, {"marker": "B", "text": "Biomass or percentage canopy cover"}, {"marker": "C", "text": "Height of the tree"}, {"marker": "D", "text": "Root length"}], "answerIndex": 1, "explanation": "Counting 1 tree vs 200 weeds understates the ecological role of the banyan tree; percentage canopy cover or biomass provides an accurate measure.", "num": 25},
+      {"topic": "Life History Variation", "tag": "KCET 2015", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2015 Biology Paper", "stem": "Which of the following organisms breeds only once in its lifetime and then dies?", "extras": [], "options": [{"marker": "A", "text": "Pacific salmon fish and bamboo"}, {"marker": "B", "text": "Pelagic fishes and oysters"}, {"marker": "C", "text": "Birds and mammals"}, {"marker": "D", "text": "Elephants and humans"}], "answerIndex": 0, "explanation": "Pacific salmon and bamboo plants exhibit semelparity: they breed only once in their lifetime and die after reproduction.", "num": 26},
+      {"topic": "Population Interactions: Amensalism", "tag": "KCET 2014", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2014 Biology Paper", "stem": "An ecological interaction where one species is harmed while the other is unaffected (- and 0) is called:", "extras": [], "options": [{"marker": "A", "text": "Amensalism"}, {"marker": "B", "text": "Commensalism"}, {"marker": "C", "text": "Parasitism"}, {"marker": "D", "text": "Mutualism"}], "answerIndex": 0, "explanation": "Amensalism is a (-, 0) interaction where one species is inhibited or harmed while the other remains unaffected (e.g. Penicillium releasing penicillin that kills bacteria).", "num": 27},
+      {"topic": "Population Interactions: Mutualism", "tag": "KCET 2014", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2014 Biology Paper", "stem": "In the mutualistic relationship between fig trees and wasps:", "extras": [], "options": [{"marker": "A", "text": "Wasp pollinates fig inflorescence while using the fruit for egg-laying and larval food"}, {"marker": "B", "text": "Wasp steals nectar without pollinating"}, {"marker": "C", "text": "Fig seeds kill wasp larvae"}, {"marker": "D", "text": "Interaction is commensalism"}], "answerIndex": 0, "explanation": "The relationship is tightly co-evolved mutualism: the female wasp pollinates the fig inflorescence and lays eggs inside; developing seeds nourish the wasp larvae.", "num": 28},
+      {"topic": "Population Growth Models", "tag": "KCET 2024", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2024 Biology Paper", "stem": "In the exponential growth equation Nt = N0 * e^(rt), the base of natural logarithms 'e' has a numerical value of approximately:", "extras": [], "options": [{"marker": "A", "text": "2.71828"}, {"marker": "B", "text": "3.14159"}, {"marker": "C", "text": "1.414"}, {"marker": "D", "text": "0.434"}], "answerIndex": 0, "explanation": "In Nt = N0 e^(rt), 'e' represents Euler's constant (base of natural logarithms), approximately equal to 2.71828.", "num": 29},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2023", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2023 Biology Paper", "stem": "The dramatic expansion of the distributional range of a species when a competing species is experimentally removed is called:", "extras": [], "options": [{"marker": "A", "text": "Competitive release"}, {"marker": "B", "text": "Competitive exclusion"}, {"marker": "C", "text": "Resource partitioning"}, {"marker": "D", "text": "Interference competition"}], "answerIndex": 0, "explanation": "Competitive release occurs when a species restricted to a small area expands its range dramatically following experimental removal of a superior competitor.", "num": 30},
+      {"topic": "Population Interactions: Commensalism", "tag": "KCET 2022", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2022 Biology Paper", "stem": "Which of the following is an example of commensalism in marine ecosystems?", "extras": [], "options": [{"marker": "A", "text": "Barnacles growing on the back of a whale"}, {"marker": "B", "text": "Sea anemone and clown fish"}, {"marker": "C", "text": "Both A and B"}, {"marker": "D", "text": "Marine copepods on fish"}], "answerIndex": 2, "explanation": "Both barnacles on whales (+, 0) and clown fish sheltering in sea anemone tentacles (+, 0) represent marine commensalism.", "num": 31},
+      {"topic": "Population Attributes & Equations", "tag": "KCET 2021", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2021 Biology Paper", "stem": "Under normal ecological conditions, which two factors are the most important in influencing population density?", "extras": [], "options": [{"marker": "A", "text": "Births and deaths"}, {"marker": "B", "text": "Immigration and emigration"}, {"marker": "C", "text": "Immigration and births"}, {"marker": "D", "text": "Emigration and deaths"}], "answerIndex": 0, "explanation": "Under normal conditions, births (natality) and deaths (mortality) are the primary determinants of population density. Immigration assumes major importance only when colonizing a new habitat.", "num": 32},
+      {"topic": "Life History Variation", "tag": "KCET 2020", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2020 Biology Paper", "stem": "Which of the following groups produces a large number of small-sized offspring to maximize fitness?", "extras": [], "options": [{"marker": "A", "text": "Oysters and pelagic fishes"}, {"marker": "B", "text": "Birds and mammals"}, {"marker": "C", "text": "Elephants and primates"}, {"marker": "D", "text": "Cattle and horses"}], "answerIndex": 0, "explanation": "Oysters and pelagic fishes produce millions of tiny eggs (r-selected life history), whereas birds and mammals produce few large offspring with parental care.", "num": 33},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2019", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2019 Biology Paper", "stem": "In South American lakes, visiting flamingoes and resident fishes compete for which common food resource?", "extras": [], "options": [{"marker": "A", "text": "Zooplankton"}, {"marker": "B", "text": "Phytoplankton"}, {"marker": "C", "text": "Small molluscs"}, {"marker": "D", "text": "Aquatic weeds"}], "answerIndex": 0, "explanation": "Visiting flamingoes and resident fishes compete for zooplankton in shallow South American lakes, proving that totally unrelated species can compete for common resources.", "num": 34},
+      {"topic": "Population Interactions: Parasitism", "tag": "KCET 2018", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2018 Biology Paper", "stem": "The human liver fluke (a trematode parasite) depends on two intermediate hosts to complete its life cycle. These are:", "extras": [], "options": [{"marker": "A", "text": "A snail and a fish"}, {"marker": "B", "text": "A mosquito and a pig"}, {"marker": "C", "text": "A cattle and a dog"}, {"marker": "D", "text": "A housefly and a sheep"}], "answerIndex": 0, "explanation": "The human liver fluke has a digenetic life cycle involving two intermediate hosts: a freshwater snail and a fish.", "num": 35},
+      {"topic": "Population Growth Models", "tag": "KCET 2017", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2017 Biology Paper", "stem": "In 1981, the intrinsic rate of natural increase (r) for the human population in India was:", "extras": [], "options": [{"marker": "A", "text": "0.0205"}, {"marker": "B", "text": "0.015"}, {"marker": "C", "text": "0.12"}, {"marker": "D", "text": "0.205"}], "answerIndex": 0, "explanation": "NCERT Page 194 states that in 1981, the r value for human population in India was 0.0205 (for Norway rat r = 0.015, and flour beetle r = 0.12).", "num": 36},
+      {"topic": "Population Interactions: Predation", "tag": "KCET 2016", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2016 Biology Paper", "stem": "Why are natural predators in ecosystems described as 'prudent'?", "extras": [], "options": [{"marker": "A", "text": "They do not overexploit their prey, preventing prey extinction and their own subsequent starvation"}, {"marker": "B", "text": "They consume all prey individuals completely"}, {"marker": "C", "text": "They protect prey from parasites"}, {"marker": "D", "text": "They reproduce at lower rates than herbivores"}], "answerIndex": 0, "explanation": "If a predator were too efficient and overexploited its prey, the prey would go extinct, leading to the predator's extinction from starvation. Hence, predators in nature are prudent.", "num": 37},
+      {"topic": "Population Attributes & Age Pyramids", "tag": "KCET 2015", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2015 Biology Paper", "stem": "An age pyramid with equal numbers of reproductive and pre-reproductive individuals represents a:", "extras": [], "options": [{"marker": "A", "text": "Stable population"}, {"marker": "B", "text": "Rapidly growing population"}, {"marker": "C", "text": "Declining population"}, {"marker": "D", "text": "Extinct population"}], "answerIndex": 0, "explanation": "A population where pre-reproductive and reproductive age groups are in balance results in a bell-shaped age pyramid representing zero population growth (stable).", "num": 38},
+      {"topic": "Population Interactions: Parasitism", "tag": "KCET 2014", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2014 Biology Paper", "stem": "Female mosquitoes are not considered true parasites on humans because:", "extras": [], "options": [{"marker": "A", "text": "They need human blood only for nourishment to develop eggs, not for lodging"}, {"marker": "B", "text": "They reproduce inside the human body"}, {"marker": "C", "text": "They kill the host immediately"}, {"marker": "D", "text": "They are autotrophic"}], "answerIndex": 0, "explanation": "Female mosquitoes visit hosts temporarily to take a blood meal for egg development; they do not derive lodging or food from the host in a permanent parasitic relationship.", "num": 39},
+      {"topic": "Population Growth Models", "tag": "KCET 2024", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2024 Biology Paper", "stem": "Which growth curve represents a population reaching carrying capacity (K) in its habitat?", "extras": [], "options": [{"marker": "A", "text": "Sigmoid (S-shaped) curve"}, {"marker": "B", "text": "J-shaped curve"}, {"marker": "C", "text": "Hyperbolic curve"}, {"marker": "D", "text": "Linear curve"}], "answerIndex": 0, "explanation": "A population growing in an environment with limited resources stabilizes at carrying capacity K, forming a sigmoid (S-shaped) logistic curve.", "num": 40},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2023", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2023 Biology Paper", "stem": "In the Galapagos Islands, the Abingdon tortoise became extinct within a decade after the introduction of:", "extras": [], "options": [{"marker": "A", "text": "Goats having greater browsing efficiency"}, {"marker": "B", "text": "Predatory eagles"}, {"marker": "C", "text": "Feral dogs"}, {"marker": "D", "text": "Invasive cacti"}], "answerIndex": 0, "explanation": "The Abingdon tortoise became extinct because introduced goats had much higher browsing efficiency, consuming all ground vegetation.", "num": 41},
+      {"topic": "Population Interactions: Commensalism", "tag": "KCET 2022", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2022 Biology Paper", "stem": "The interaction between clown fish living among the tentacles of sea anemone is:", "extras": [], "options": [{"marker": "A", "text": "Commensalism"}, {"marker": "B", "text": "Mutualism"}, {"marker": "C", "text": "Parasitism"}, {"marker": "D", "text": "Predation"}], "answerIndex": 0, "explanation": "Clown fish gains protection from predators among the stinging tentacles (+), while the sea anemone derives no measurable benefit or harm (0).", "num": 42},
+      {"topic": "Population Attributes", "tag": "KCET 2021", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2021 Biology Paper", "stem": "Which of the following is a characteristic attribute of a population but NOT of an individual organism?", "extras": [], "options": [{"marker": "A", "text": "Birth rate, death rate, and sex ratio"}, {"marker": "B", "text": "Birth and death"}, {"marker": "C", "text": "Metabolism and respiration"}, {"marker": "D", "text": "Cellular structure"}], "answerIndex": 0, "explanation": "An individual organism experiences birth and death, but only a population possesses per capita birth rates, death rates, and a sex ratio.", "num": 43},
+      {"topic": "Population Interactions: Predation", "tag": "KCET 2020", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2020 Biology Paper", "stem": "Morphological defenses in plants against herbivores include:", "extras": [], "options": [{"marker": "A", "text": "Thorns in Acacia and spines in Cactus"}, {"marker": "B", "text": "Cardiac glycosides in Calotropis"}, {"marker": "C", "text": "Nicotine and caffeine in leaves"}, {"marker": "D", "text": "Resins in conifers"}], "answerIndex": 0, "explanation": "Thorns and spines are morphological adaptations, while cardiac glycosides, nicotine, and caffeine are chemical defenses.", "num": 44},
+      {"topic": "Life History Variation", "tag": "KCET 2019", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2019 Biology Paper", "stem": "Darwinian fitness of a population in an ecosystem is characterized by:", "extras": [], "options": [{"marker": "A", "text": "High intrinsic rate of increase (high r value)"}, {"marker": "B", "text": "Zero reproductive capacity"}, {"marker": "C", "text": "Low survival of offspring"}, {"marker": "D", "text": "Production of non-viable gametes"}], "answerIndex": 0, "explanation": "Darwinian fitness refers to reproductive fitness in a given habitat, reflected in a high intrinsic rate of natural increase (r).", "num": 45},
+      {"topic": "Population Growth Models", "tag": "KCET 2018", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2018 Biology Paper", "stem": "A population growing exponentially doubles its size every year. Its growth curve is:", "extras": [], "options": [{"marker": "A", "text": "J-shaped curve"}, {"marker": "B", "text": "S-shaped curve"}, {"marker": "C", "text": "Bell-shaped curve"}, {"marker": "D", "text": "Declining curve"}], "answerIndex": 0, "explanation": "Geometric or exponential growth under unlimited resources produces a classic J-shaped curve.", "num": 46},
+      {"topic": "Population Interactions: Mutualism", "tag": "KCET 2017", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2017 Biology Paper", "stem": "Lichens are mutualistic associations between:", "extras": [], "options": [{"marker": "A", "text": "Fungus and photosynthetic algae or cyanobacteria"}, {"marker": "B", "text": "Fungus and higher plant roots"}, {"marker": "C", "text": "Algae and viruses"}, {"marker": "D", "text": "Bacteria and protozoa"}], "answerIndex": 0, "explanation": "Lichens represent an intimate mutualism (+, +) between a fungal partner (mycobiont) and an algal/cyanobacterial partner (phycobiont).", "num": 47},
+      {"topic": "Population Interactions: Parasitism", "tag": "KCET 2016", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2016 Biology Paper", "stem": "Ectoparasitic copepods infest which of the following marine hosts?", "extras": [], "options": [{"marker": "A", "text": "Marine fishes"}, {"marker": "B", "text": "Corals"}, {"marker": "C", "text": "Sponges"}, {"marker": "D", "text": "Sea anemone"}], "answerIndex": 0, "explanation": "NCERT notes that many marine fishes are infested with ectoparasitic crustaceans called copepods.", "num": 48},
+      {"topic": "Population Attributes & Density", "tag": "KCET 2015", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2015 Biology Paper", "stem": "If N is the population density at time t, which formula correctly computes the density at time t+1?", "extras": [], "options": [{"marker": "A", "text": "Nt+1 = Nt + [(B + I) - (D + E)]"}, {"marker": "B", "text": "Nt+1 = Nt + [(B + D) - (I + E)]"}, {"marker": "C", "text": "Nt+1 = Nt + [(B + E) - (D + I)]"}, {"marker": "D", "text": "Nt+1 = Nt - [(B + I) + (D + E)]"}], "answerIndex": 0, "explanation": "The population density at t+1 is Nt + [(B + I) - (D + E)], where B = births, I = immigrants, D = deaths, E = emigrants.", "num": 49},
+      {"topic": "Population Interactions: Competition", "tag": "KCET 2014", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2014 Biology Paper", "stem": "Two closely related species can coexist in the same habitat without one eliminating the other by:", "extras": [], "options": [{"marker": "A", "text": "Resource partitioning"}, {"marker": "B", "text": "Competitive exclusion"}, {"marker": "C", "text": "Amensalism"}, {"marker": "D", "text": "Endoparasitism"}], "answerIndex": 0, "explanation": "Coexistence is achieved by resource partitioning (e.g. choosing different feeding times or foraging patterns), avoiding competitive exclusion.", "num": 50}
+    ];
+
+    const NEET_DATA = [
+      {"topic": "Population Growth Models", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q161)", "stem": "Consider a population of 10 million cells. Given the per-capita birth rate of 0.002 (per unit time) and per-capita death rate of 0.002 (per unit time), the expected number of cells after 10 generations is:", "extras": [], "options": [{"marker": "A", "text": "1 million"}, {"marker": "B", "text": "2 million"}, {"marker": "C", "text": "10 million"}, {"marker": "D", "text": "100 million"}], "answerIndex": 2, "explanation": "Here, per-capita birth rate b = 0.002 and death rate d = 0.002. Intrinsic rate of natural increase r = b - d = 0. Since r = 0, population size remains constant at 10 million cells.", "num": 1},
+      {"topic": "Population Growth Models", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q163)", "stem": "Given below are two statements: one is labelled as Assertion A and the other as Reason R.\nAssertion A: The logistic growth model of populations is considered more realistic than the exponential growth model.\nReason R: Resources are finite.\nIn light of the above statements, choose the correct answer:", "extras": [], "options": [{"marker": "A", "text": "Both A and R are correct and R is the correct explanation of A"}, {"marker": "B", "text": "Both A and R are correct but R is not the correct explanation of A"}, {"marker": "C", "text": "A is correct but R is not correct"}, {"marker": "D", "text": "A is not correct but R is correct"}], "answerIndex": 0, "explanation": "The logistic growth model is considered more realistic because in nature resources (food and space) are finite and sooner or later become limiting.", "num": 2},
+      {"topic": "Population Growth Models", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q165)", "stem": "Which of the following equations correctly depicts the Verhulst-Pearl logistic population growth?", "extras": [], "options": [{"marker": "A", "text": "dN/dt = rN((K - N)/K)"}, {"marker": "B", "text": "dN/dt = rN((K + N)/K)"}, {"marker": "C", "text": "dN/dt = rN(K/(K - N))"}, {"marker": "D", "text": "dN/dt = rN((K - N)/N)"}], "answerIndex": 0, "explanation": "The equation for Verhulst-Pearl logistic growth is dN/dt = rN((K - N)/K).", "num": 3},
+      {"topic": "Population Interactions: Competition", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q172)", "stem": "Given below are two statements: one is labelled as Assertion A and the other as Reason R.\nAssertion A: Abingdon tortoise in Galapagos islands became extinct within a decade after goats were introduced.\nReason R: Goats were more efficient at browsing than Abingdon tortoise.\nIn light of the above statements, choose the most appropriate answer:", "extras": [], "options": [{"marker": "A", "text": "Both A and R are correct and R is the correct explanation of A"}, {"marker": "B", "text": "Both A and R are correct but R is not the correct explanation"}, {"marker": "C", "text": "A is correct but R is not correct"}, {"marker": "D", "text": "A is not correct but R is correct"}], "answerIndex": 0, "explanation": "Both Assertion and Reason are true facts from NCERT Chapter 11. Goats consumed ground vegetation far faster than tortoises, driving them to extinction.", "num": 4},
+      {"topic": "Population Interactions Summary", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q174)", "stem": "Match List I with List II:\nList I (Interaction Outcome):\nA. Both species are harmed\nB. One species is harmed and the other is benefited\nC. Both species are benefited\nD. One is benefited while the other has no effect\nList II (Interaction Name):\nI. Predation / Parasitism\nII. Mutualism\nIII. Competition\nIV. Commensalism\nChoose the correct answer:", "extras": [], "options": [{"marker": "A", "text": "A-III, B-IV, C-II, D-I"}, {"marker": "B", "text": "A-I, B-II, C-III, D-IV"}, {"marker": "C", "text": "A-II, B-I, C-IV, D-III"}, {"marker": "D", "text": "A-III, B-I, C-II, D-IV"}], "answerIndex": 3, "explanation": "Both harmed = Competition (A-III); One harmed, other benefited = Predation/Parasitism (B-I); Both benefited = Mutualism (C-II); One benefited, other unaffected = Commensalism (D-IV).", "num": 5},
+      {"topic": "Natural Selection & Variation", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q141)", "stem": "Natural selection operating on a population trait can lead to:\na) Stabilisation\nb) Genetic drift\nc) Directional change\nd) Disruption\nChoose the correct option:", "extras": [], "options": [{"marker": "A", "text": "(a) only"}, {"marker": "B", "text": "(a), (c) and (d) only"}, {"marker": "C", "text": "(a), (b), (c) and (d)"}, {"marker": "D", "text": "(a) and (c) only"}], "answerIndex": 1, "explanation": "Natural selection on quantitative traits can produce three outcomes: Stabilisation, Directional change, or Disruptive selection. Genetic drift is a separate evolutionary mechanism.", "num": 6},
+      {"topic": "Trophic Levels & Consumers", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q146)", "stem": "Which of the following are primary consumers in a food chain?", "extras": [], "options": [{"marker": "A", "text": "Parasites"}, {"marker": "B", "text": "Predators"}, {"marker": "C", "text": "Herbivores"}, {"marker": "D", "text": "Carnivores"}], "answerIndex": 2, "explanation": "Herbivores feed directly on primary producers (plants) and therefore occupy the second trophic level as primary consumers.", "num": 7},
+      {"topic": "Population Genetics: Hardy-Weinberg", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Exam 2026 (Q147)", "stem": "A population of diploid organisms is at Hardy-Weinberg equilibrium. If the frequency of allele A is 0.1, the frequency of genotype AA is:", "extras": [], "options": [{"marker": "A", "text": "0.01"}, {"marker": "B", "text": "0.02"}, {"marker": "C", "text": "0.10"}, {"marker": "D", "text": "0.99"}], "answerIndex": 0, "explanation": "If frequency of allele A (p) = 0.1, then frequency of homozygous genotype AA is p^2 = (0.1)^2 = 0.01.", "num": 8},
+      {"topic": "Population Interactions: Commensalism", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Q110)", "stem": "Epiphytes that are growing on a mango branch are an example of which of the following?", "extras": [], "options": [{"marker": "A", "text": "Predation"}, {"marker": "B", "text": "Amensalism"}, {"marker": "C", "text": "Commensalism"}, {"marker": "D", "text": "Mutualism"}], "answerIndex": 2, "explanation": "Epiphytic orchids growing on mango branches derive physical support and access to sunlight without taking water or food from the tree, representing commensalism (+, 0).", "num": 9},
+      {"topic": "History of Ecology in India", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Q123)", "stem": "Who is revered as the Father of Ecology in India?", "extras": [], "options": [{"marker": "A", "text": "Ram Udar"}, {"marker": "B", "text": "Birbal Sahni"}, {"marker": "C", "text": "S. R. Kashyap"}, {"marker": "D", "text": "Ramdeo Misra"}], "answerIndex": 3, "explanation": "Prof. Ramdeo Misra is honored in NCERT Unit X as the Father of Ecology in India.", "num": 10},
+      {"topic": "Population Interactions: Mutualism", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Q141)", "stem": "Which of the following statements about fig trees and fig wasps is correct?\nStatement I: The fig wasp pollinates the fig inflorescence while searching for egg-laying sites.\nStatement II: In return, the fig offers developing seeds as food for wasp larvae.", "extras": [], "options": [{"marker": "A", "text": "Both statements are correct"}, {"marker": "B", "text": "Statement I is correct but II is incorrect"}, {"marker": "C", "text": "Statement I is incorrect but II is correct"}, {"marker": "D", "text": "Both statements are incorrect"}], "answerIndex": 0, "explanation": "Both statements describe the tight, co-evolved mutualism between the fig tree and its partner wasp.", "num": 11},
+      {"topic": "Population Growth Models", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Q178)", "stem": "Which of the following equations represents the Verhulst-Pearl Logistic Growth of a population?", "extras": [], "options": [{"marker": "A", "text": "dN/dt = rN((N - K)/N)"}, {"marker": "B", "text": "dN/dt = N((r - K)/K)"}, {"marker": "C", "text": "dN/dt = r((K - N)/K)"}, {"marker": "D", "text": "dN/dt = rN((K - N)/K)"}], "answerIndex": 3, "explanation": "Verhulst-Pearl Logistic Growth is expressed as dN/dt = rN((K - N)/K).", "num": 12},
+      {"topic": "Extinction Rates & Dynamics", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2024 Biology Paper (Q129)", "stem": "How is the sixth episode of mass extinction, which is currently in progress, different from previous episodes?", "extras": [], "options": [{"marker": "A", "text": "Current extinction rates are far lower than previous episodes"}, {"marker": "B", "text": "Present extinction rates are 100 to 1000 times faster than in pre-human times"}, {"marker": "C", "text": "Net species extinction rate is zero"}, {"marker": "D", "text": "Current rate is nearly 10 times faster"}], "answerIndex": 1, "explanation": "The current anthropogenic sixth extinction rate is estimated to be 100 to 1,000 times faster than natural background extinction rates in pre-human times.", "num": 13},
+      {"topic": "Population Interactions: Mutualism", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2024 Biology Paper (Q139)", "stem": "Which of the following is an appropriate example of 'sexual deceit'?", "extras": [], "options": [{"marker": "A", "text": "Female wasp and fig"}, {"marker": "B", "text": "Cuckoo and crow"}, {"marker": "C", "text": "Ophrys and bumblebee"}, {"marker": "D", "text": "Sea anemone and clown fish"}], "answerIndex": 2, "explanation": "The Mediterranean orchid Ophrys employs sexual deceit, where one petal mimics a female bee to achieve pollination through pseudocopulation.", "num": 14},
+      {"topic": "Population Interactions Summary", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2024 Biology Paper (Q180)", "stem": "Choose the correct statements regarding population interactions between two species:\nA. In both parasitism and commensalism, only one species benefits and the other is harmed.\nB. Both species benefit in mutualism.\nC. Both species benefit in commensalism.\nD. In parasitism, only one species benefits and the other is harmed.\nE. In amensalism, one species is harmed and the other is unaffected.\nChoose the correct option:", "extras": [], "options": [{"marker": "A", "text": "A and D only"}, {"marker": "B", "text": "A and B only"}, {"marker": "C", "text": "B and E only"}, {"marker": "D", "text": "B, D and E only"}], "answerIndex": 3, "explanation": "Mutualism (+, +) benefits both (B is true). Parasitism (+, -) benefits parasite and harms host (D is true). Amensalism (-, 0) harms one while other is unaffected (E is true). Commensalism is (+, 0).", "num": 15},
+      {"topic": "Interspecies Relationships Match", "tag": "NTA Paper 304 E", "sourceUrl": "https://nta.ac.in/", "sourceLabel": "NTA Biology Paper 304 E (Q22)", "stem": "Match List-I with List-II:\nList-I:\n(A) Commensalism\n(B) Mutualism\n(C) Amensalism\n(D) Parasitism\nList-II:\n(I) One species is benefited at the expense of the other\n(II) One species is harmed and the other is unaffected\n(III) Both species are benefited\n(IV) One species benefits and other remains unaffected\nChoose the correct answer:", "extras": [], "options": [{"marker": "A", "text": "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)"}, {"marker": "B", "text": "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)"}, {"marker": "C", "text": "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)"}, {"marker": "D", "text": "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)"}], "answerIndex": 1, "explanation": "Commensalism: (+, 0) -> IV; Mutualism: (+, +) -> III; Amensalism: (-, 0) -> II; Parasitism: (+, -) -> I.", "num": 16},
+      {"topic": "Population Attributes & Age Pyramids", "tag": "NTA Paper 304 E", "sourceUrl": "https://nta.ac.in/", "sourceLabel": "NTA Biology Paper 304 E (Q23)", "stem": "In a country, at any given time, the population has equal proportions of young and mature reproductive individuals. What type of growth does it reflect?", "extras": [], "options": [{"marker": "A", "text": "Expanding"}, {"marker": "B", "text": "Declining"}, {"marker": "C", "text": "Stable"}, {"marker": "D", "text": "J-shaped"}], "answerIndex": 2, "explanation": "When pre-reproductive and reproductive age classes are balanced, the population size remains stationary, representing a stable population.", "num": 17},
+      {"topic": "Population Interactions: Competition", "tag": "NTA Paper 304 E", "sourceUrl": "https://nta.ac.in/", "sourceLabel": "NTA Biology Paper 304 E (Q24)", "stem": "Two closely related species can coexist indefinitely and avoid Gause's Competitive Exclusion Principle by:", "extras": [], "options": [{"marker": "A", "text": "Eliminating the inferior species"}, {"marker": "B", "text": "Resource partitioning"}, {"marker": "C", "text": "Interacting with each other symbiotically"}, {"marker": "D", "text": "Changing the area of grazing"}], "answerIndex": 1, "explanation": "Resource partitioning (e.g. foraging at different times or heights) permits competitive coexistence, bypassing complete competitive exclusion.", "num": 18},
+      {"topic": "Population Attributes & Biomass", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2023 Biology Paper", "stem": "Which of the following is an example of an inverted ecological pyramid of biomass?", "extras": [], "options": [{"marker": "A", "text": "Pyramid of biomass in a sea/lake"}, {"marker": "B", "text": "Pyramid of biomass in a forest"}, {"marker": "C", "text": "Pyramid of biomass in a grassland"}, {"marker": "D", "text": "Pyramid of energy in a pond"}], "answerIndex": 0, "explanation": "In aquatic ecosystems (sea/lake), the biomass of standing phytoplankton at any given instant is small compared to the large biomass of predatory fishes, producing an inverted pyramid.", "num": 19},
+      {"topic": "Population Interactions: Predation", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2023 Biology Paper", "stem": "Predators play an essential role in biological communities by:", "extras": [], "options": [{"marker": "A", "text": "Acting as conduits for energy transfer across trophic levels"}, {"marker": "B", "text": "Keeping prey populations under control"}, {"marker": "C", "text": "Maintaining species diversity by reducing competition among prey"}, {"marker": "D", "text": "All of the above"}], "answerIndex": 3, "explanation": "Predators transfer energy to higher trophic levels, prevent prey population explosions, and maintain community diversity.", "num": 20},
+      {"topic": "Population Growth Models", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2022 Biology Paper", "stem": "In the equation dN/dt = rN, the parameter 'r' is called:", "extras": [], "options": [{"marker": "A", "text": "Intrinsic rate of natural increase"}, {"marker": "B", "text": "Carrying capacity"}, {"marker": "C", "text": "Environmental resistance"}, {"marker": "D", "text": "Mortality coefficient"}], "answerIndex": 0, "explanation": "The parameter 'r' represents the intrinsic rate of natural increase, a critical metric measuring inherent potential of a population to grow.", "num": 21},
+      {"topic": "Population Interactions: Commensalism", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2022 Biology Paper", "stem": "Which of the following pairs represents a (+, 0) interaction?", "extras": [], "options": [{"marker": "A", "text": "Cattle egret and grazing cattle"}, {"marker": "B", "text": "Fungus and photosynthetic alga in lichen"}, {"marker": "C", "text": "Cuckoo laying eggs in crow's nest"}, {"marker": "D", "text": "Balanus and Chthamalus"}], "answerIndex": 0, "explanation": "Cattle egrets forage on insects stirred up by cattle. The egret benefits (+) while the grazing cow is unaffected (0), representing commensalism.", "num": 22},
+      {"topic": "Population Interactions: Parasitism", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2021 Biology Paper", "stem": "Which of the following adaptations is typically observed in internal parasites (endoparasites)?", "extras": [], "options": [{"marker": "A", "text": "Loss of unnecessary sense organs and digestive system, with high reproductive capacity"}, {"marker": "B", "text": "Well-developed locomotory and sensory organs"}, {"marker": "C", "text": "Low reproductive potential"}, {"marker": "D", "text": "Absence of suckers or hooks"}], "answerIndex": 0, "explanation": "Endoparasites simplify morphological features, losing eyes and digestive tracts, while evolving adhesive suckers and immense reproductive output.", "num": 23},
+      {"topic": "Population Attributes & Density", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2021 Biology Paper", "stem": "When a new habitat is being colonized from scratch, which process contributes more significantly to population growth than birth rates?", "extras": [], "options": [{"marker": "A", "text": "Immigration"}, {"marker": "B", "text": "Mortality"}, {"marker": "C", "text": "Emigration"}, {"marker": "D", "text": "Competition"}], "answerIndex": 0, "explanation": "When colonizing a new habitat, immigration of founders contributes far more significantly to initial population buildup than reproductive births.", "num": 24},
+      {"topic": "Population Growth Models", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2020 Biology Paper", "stem": "A population exhibiting exponential growth produces a curve shaped like the letter:", "extras": [], "options": [{"marker": "A", "text": "J"}, {"marker": "B", "text": "S"}, {"marker": "C", "text": "U"}, {"marker": "D", "text": "L"}], "answerIndex": 0, "explanation": "Exponential growth under unlimited resources produces a classic J-shaped curve when plotted against time.", "num": 25},
+      {"topic": "Population Interactions: Competition", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2020 Biology Paper", "stem": "In interference competition, the feeding efficiency of one species is reduced due to:", "extras": [], "options": [{"marker": "A", "text": "The interfering and inhibitory presence of another species, even when resources are abundant"}, {"marker": "B", "text": "Severe food shortages only"}, {"marker": "C", "text": "Predator avoidance behaviour"}, {"marker": "D", "text": "Trophic level dilution"}], "answerIndex": 0, "explanation": "Interference competition occurs when the presence of one competitor actively inhibits the feeding efficiency of another, even if food is plentiful.", "num": 26},
+      {"topic": "Population Interactions: Predation", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2019 Biology Paper", "stem": "Nearly what percentage of all known insects are phytophagous (feed on plant sap and tissues)?", "extras": [], "options": [{"marker": "A", "text": "25%"}, {"marker": "B", "text": "50%"}, {"marker": "C", "text": "10%"}, {"marker": "D", "text": "75%"}], "answerIndex": 0, "explanation": "NCERT notes that nearly 25 percent of all insect species are phytophagous, feeding on plant sap and vegetative parts.", "num": 27},
+      {"topic": "Population Interactions: Mutualism", "tag": "NEET 2018", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2018 Biology Paper", "stem": "Why are plant-pollinator mutualisms often tightly co-evolved?", "extras": [], "options": [{"marker": "A", "text": "To safeguard the plant from 'cheaters' that rob nectar without pollinating"}, {"marker": "B", "text": "To increase competitive exclusion"}, {"marker": "C", "text": "To reduce floral genetic diversity"}, {"marker": "D", "text": "To prevent predator mimicry"}], "answerIndex": 0, "explanation": "Co-evolution of floral morphology and pollinator anatomy safeguards mutualisms against 'cheater' nectar thieves, ensuring mutual benefit.", "num": 28},
+      {"topic": "Population Growth Models", "tag": "NEET 2017", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2017 Biology Paper", "stem": "The carrying capacity (K) of an environment refers to:", "extras": [], "options": [{"marker": "A", "text": "The maximum population size that a given habitat can sustain indefinitely"}, {"marker": "B", "text": "The minimum number of individuals required to avoid extinction"}, {"marker": "C", "text": "The reproductive rate under unlimited food"}, {"marker": "D", "text": "The number of predators in the habitat"}], "answerIndex": 0, "explanation": "Carrying capacity K is the upper asymptote limit representing the maximum population density an environment's resources can sustainably support.", "num": 29},
+      {"topic": "Population Attributes & Age Pyramids", "tag": "NEET 2016", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2016 Biology Paper", "stem": "If an age pyramid has a broad base of pre-reproductive individuals, what does it indicate about the future population?", "extras": [], "options": [{"marker": "A", "text": "It will expand and grow rapidly"}, {"marker": "B", "text": "It will decline"}, {"marker": "C", "text": "It will remain stationary"}, {"marker": "D", "text": "It has reached carrying capacity"}], "answerIndex": 0, "explanation": "A wide pre-reproductive base means a large cohort of individuals will enter reproductive age, driving rapid population expansion.", "num": 30},
+      {"topic": "Population Interactions: Parasitism", "tag": "AIPMT 2015", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2015 Biology Paper", "stem": "In brood parasitism, why do host birds not eject the parasitic bird's eggs?", "extras": [], "options": [{"marker": "A", "text": "The parasitic eggs have co-evolved to mimic the host eggs in size and colour"}, {"marker": "B", "text": "The parasitic bird kills the host parents"}, {"marker": "C", "text": "The host bird cannot see color"}, {"marker": "D", "text": "The eggs emit pheromones that stun the host"}], "answerIndex": 0, "explanation": "Through co-evolution, parasitic cuckoo eggs mimic host crow eggs in pigmentation and dimensions, reducing detection and rejection.", "num": 31},
+      {"topic": "Population Growth Models", "tag": "AIPMT 2014", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2014 Biology Paper", "stem": "When resources are limiting, the growth rate of a population becomes zero when population density N equals:", "extras": [], "options": [{"marker": "A", "text": "Carrying capacity K"}, {"marker": "B", "text": "Zero"}, {"marker": "C", "text": "Infinity"}, {"marker": "D", "text": "r"}], "answerIndex": 0, "explanation": "In dN/dt = rN((K - N)/K), when N = K, the term (K - K)/K = 0, causing the overall growth rate dN/dt to become zero (asymptote).", "num": 32},
+      {"topic": "Population Interactions: Competition", "tag": "AIPMT 2013", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2013 Biology Paper", "stem": "Gause's principle of competitive exclusion is valid only when:", "extras": [], "options": [{"marker": "A", "text": "Resources are limiting and competing species share the identical niche"}, {"marker": "B", "text": "Resources are unlimited"}, {"marker": "C", "text": "Species feed on different trophic levels"}, {"marker": "D", "text": "Organisms produce a large number of offspring"}], "answerIndex": 0, "explanation": "Gause's exclusion holds true when resources are limiting and competing species have identical ecological requirements without resource partitioning.", "num": 33},
+      {"topic": "Population Interactions: Commensalism", "tag": "AIPMT 2012", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2012 Biology Paper", "stem": "Which of the following interactions represents commensalism?", "extras": [], "options": [{"marker": "A", "text": "Clown fish living among the tentacles of sea anemone"}, {"marker": "B", "text": "Ascaris in human intestine"}, {"marker": "C", "text": "Ticks on dogs"}, {"marker": "D", "text": "Mycorrhiza in pinus roots"}], "answerIndex": 0, "explanation": "Clown fish gains shelter among sea anemone tentacles (+, 0), while sea anemone is unaffected, representing commensalism.", "num": 34},
+      {"topic": "Population Attributes", "tag": "AIPMT 2011", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2011 Biology Paper", "stem": "A population is defined ecologically as:", "extras": [], "options": [{"marker": "A", "text": "A group of individuals of the same species living in a defined area and potentially interbreeding"}, {"marker": "B", "text": "All living organisms in an ecosystem"}, {"marker": "C", "text": "Organisms of different species occupying the same trophic level"}, {"marker": "D", "text": "A community of producers and decomposers"}], "answerIndex": 0, "explanation": "In ecology, a population consists of individuals of the same species inhabiting a specific geographical area and sharing or competing for resources.", "num": 35},
+      {"topic": "Population Interactions: Predation", "tag": "AIPMT 2010", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2010 Biology Paper", "stem": "Which of the following acts as a chemical defense in plants against grazers and browsers?", "extras": [], "options": [{"marker": "A", "text": "Nicotine, caffeine, and quinine"}, {"marker": "B", "text": "Chlorophyll"}, {"marker": "C", "text": "Starch and glycogen"}, {"marker": "D", "text": "Carotenoids"}], "answerIndex": 0, "explanation": "Secondary metabolites such as nicotine, caffeine, quinine, and strychnine evolved in plants as toxic chemical defenses against herbivores.", "num": 36},
+      {"topic": "Population Growth Models", "tag": "AIPMT 2009", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2009 Biology Paper", "stem": "Under which condition does a population grow in an exponential / geometric fashion?", "extras": [], "options": [{"marker": "A", "text": "When food and space resources are unlimited"}, {"marker": "B", "text": "When resources are severely limiting"}, {"marker": "C", "text": "When mortality equals natality"}, {"marker": "D", "text": "When carrying capacity is reached"}], "answerIndex": 0, "explanation": "Unlimited resources allow organisms to realize their full reproductive potential, leading to exponential geometric growth.", "num": 37},
+      {"topic": "Population Interactions: Mutualism", "tag": "AIPMT 2008", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2008 Biology Paper", "stem": "The mutualistic interaction between a fungus and the roots of higher plants in mycorrhizae primarily helps the plant in:", "extras": [], "options": [{"marker": "A", "text": "Absorption of phosphorus from soil"}, {"marker": "B", "text": "Fixation of atmospheric nitrogen"}, {"marker": "C", "text": "Photosynthesis in darkness"}, {"marker": "D", "text": "Transpiration pull"}], "answerIndex": 0, "explanation": "In mycorrhizae (e.g. Glomus), the fungal hyphae absorb phosphorus from soil and transfer it to the plant roots.", "num": 38},
+      {"topic": "Population Interactions: Competition", "tag": "AIPMT 2007", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2007 Biology Paper", "stem": "Darwin was convinced that which of the following is a potent force in organic evolution?", "extras": [], "options": [{"marker": "A", "text": "Interspecific competition"}, {"marker": "B", "text": "Commensalism"}, {"marker": "C", "text": "Amensalism"}, {"marker": "D", "text": "Brood parasitism"}], "answerIndex": 0, "explanation": "Darwin viewed interspecific competition for limited resources as a primary evolutionary driving force for natural selection.", "num": 39},
+      {"topic": "Population Attributes & Age Pyramids", "tag": "AIPMT 2006", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2006 Biology Paper", "stem": "An urn-shaped age pyramid with a small base of pre-reproductive individuals indicates that the population is:", "extras": [], "options": [{"marker": "A", "text": "Declining"}, {"marker": "B", "text": "Expanding"}, {"marker": "C", "text": "Stable"}, {"marker": "D", "text": "Fluctuating wildly"}], "answerIndex": 0, "explanation": "An urn-shaped pyramid has fewer pre-reproductive individuals than reproductive ones, indicating negative growth (declining population).", "num": 40},
+      {"topic": "Population Interactions: Parasitism", "tag": "AIPMT 2005", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2005 Biology Paper", "stem": "Parasites that feed on the external surface of the host organism are known as:", "extras": [], "options": [{"marker": "A", "text": "Ectoparasites"}, {"marker": "B", "text": "Endoparasites"}, {"marker": "C", "text": "Hyperparasites"}, {"marker": "D", "text": "Symbionts"}], "answerIndex": 0, "explanation": "Organisms that feed on the external host surface (e.g. lice on humans, ticks on dogs) are ectoparasites.", "num": 41},
+      {"topic": "Population Growth Models", "tag": "AIPMT 2004", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2004 Biology Paper", "stem": "The integral form of the exponential growth equation is:", "extras": [], "options": [{"marker": "A", "text": "Nt = N0 * e^(rt)"}, {"marker": "B", "text": "Nt = N0 + rt"}, {"marker": "C", "text": "Nt = N0 * rt"}, {"marker": "D", "text": "Nt = N0 / e^(rt)"}], "answerIndex": 0, "explanation": "The integral form of exponential growth is Nt = N0 * e^(rt), where Nt is density at time t, N0 is density at time 0, and r is intrinsic growth rate.", "num": 42},
+      {"topic": "Population Interactions: Commensalism", "tag": "AIPMT 2003", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2003 Biology Paper", "stem": "Which of the following is an example of commensalism?", "extras": [], "options": [{"marker": "A", "text": "Barnacles on the back of a whale"}, {"marker": "B", "text": "Liver fluke in human"}, {"marker": "C", "text": "Fungus in mycorrhizae"}, {"marker": "D", "text": "Rhizobium in root nodules"}], "answerIndex": 0, "explanation": "Barnacles attach to the whale's skin for transport and filter-feeding (+), while the whale is neither benefited nor harmed (0).", "num": 43},
+      {"topic": "Population Growth Models", "tag": "AIPMT 2002", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2002 Biology Paper", "stem": "A population growing in a habitat with finite resources reaches an asymptote when:", "extras": [], "options": [{"marker": "A", "text": "Population density N equals carrying capacity K"}, {"marker": "B", "text": "Birth rate exceeds death rate"}, {"marker": "C", "text": "Mortality becomes zero"}, {"marker": "D", "text": "Immigration equals carrying capacity"}], "answerIndex": 0, "explanation": "When population size N reaches environmental carrying capacity K, growth stabilizes and reaches a stationary plateau (asymptote).", "num": 44},
+      {"topic": "Population Interactions: Predation", "tag": "AIPMT 2001", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2001 Biology Paper", "stem": "In ecological communities, which organism transfers the energy fixed by autotrophs to higher trophic levels?", "extras": [], "options": [{"marker": "A", "text": "Herbivores and predators"}, {"marker": "B", "text": "Decomposers only"}, {"marker": "C", "text": "Pathogenic bacteria"}, {"marker": "D", "text": "Soil fungi"}], "answerIndex": 0, "explanation": "Predation and herbivory act as nature's conduits to transfer solar energy captured by primary producers up through the trophic food web.", "num": 45},
+      {"topic": "Population Interactions Summary", "tag": "AIPMT 2000", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2000 Biology Paper", "stem": "An interaction where both interacting species suffer and lose (- and -) is:", "extras": [], "options": [{"marker": "A", "text": "Competition"}, {"marker": "B", "text": "Predation"}, {"marker": "C", "text": "Parasitism"}, {"marker": "D", "text": "Amensalism"}], "answerIndex": 0, "explanation": "Interspecific competition is a detrimental (-, -) interaction where fitness of both competing species is lowered.", "num": 46},
+      {"topic": "Population Attributes & Equations", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2024 Biology Paper", "stem": "In a population of 50 lotus plants, 10 new plants are added in a year by reproduction. What is the birth rate?", "extras": [], "options": [{"marker": "A", "text": "0.2 offspring per lotus per year"}, {"marker": "B", "text": "0.5 offspring per lotus per year"}, {"marker": "C", "text": "0.1 offspring per lotus per year"}, {"marker": "D", "text": "5 offspring per lotus per year"}], "answerIndex": 0, "explanation": "Birth rate = 10 / 50 = 0.2 offspring per lotus per year.", "num": 47},
+      {"topic": "Population Growth Models", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2023 Biology Paper", "stem": "Which of the following statements about the intrinsic rate of natural increase (r) is correct?", "extras": [], "options": [{"marker": "A", "text": "It is an important parameter chosen for assessing impacts of biotic and abiotic factors on population growth"}, {"marker": "B", "text": "It is always zero in expanding populations"}, {"marker": "C", "text": "It is negative when resources are unlimited"}, {"marker": "D", "text": "It equals carrying capacity K"}], "answerIndex": 0, "explanation": "The intrinsic rate of natural increase (r = b - d) reflects the inherent potential of a population to grow under given conditions.", "num": 48},
+      {"topic": "Population Interactions: Mutualism", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2022 Biology Paper", "stem": "In the orchid Ophrys, pseudocopulation refers to:", "extras": [], "options": [{"marker": "A", "text": "Male bees attempting to copulate with orchid petals mimicking female bees"}, {"marker": "B", "text": "Wasps laying eggs inside fig flowers"}, {"marker": "C", "text": "Birds feeding on nectar"}, {"marker": "D", "text": "Predators mimicking prey"}], "answerIndex": 0, "explanation": "Male bees mistake the orchid petal for a female bee in appearance and pheromone odor, attempting to copulate and transferring pollen.", "num": 49},
+      {"topic": "Population Interactions: Predation", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2021 Biology Paper", "stem": "Cryptic coloration (camouflage) evolved in insects and frogs is an adaptation against:", "extras": [], "options": [{"marker": "A", "text": "Predation"}, {"marker": "B", "text": "Parasitism"}, {"marker": "C", "text": "Competition"}, {"marker": "D", "text": "Amensalism"}], "answerIndex": 0, "explanation": "Camouflage allows prey animals to blend with their surroundings, avoiding visual detection by predators.", "num": 50},
+      {"topic": "Population Interactions: Competition", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2020 Biology Paper", "stem": "Competition is best defined ecologically as a process in which:", "extras": [], "options": [{"marker": "A", "text": "The fitness of one species is significantly lower in the presence of another species"}, {"marker": "B", "text": "One species eats another species"}, {"marker": "C", "text": "Both species benefit from shared food"}, {"marker": "D", "text": "One species kills another without feeding on it"}], "answerIndex": 0, "explanation": "NCERT defines competition as a process in which the fitness (intrinsic growth rate r) of one species is significantly lower in the presence of another.", "num": 51},
+      {"topic": "Population Interactions: Parasitism", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2019 Biology Paper", "stem": "Head lice on humans and ticks on dogs are examples of:", "extras": [], "options": [{"marker": "A", "text": "Ectoparasites"}, {"marker": "B", "text": "Endoparasites"}, {"marker": "C", "text": "Brood parasites"}, {"marker": "D", "text": "Commensals"}], "answerIndex": 0, "explanation": "Lice and ticks live and feed externally on the host skin and are classified as ectoparasites.", "num": 52},
+      {"topic": "Population Attributes & Density", "tag": "NEET 2018", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2018 Biology Paper", "stem": "A population with high immigration and natality will exhibit:", "extras": [], "options": [{"marker": "A", "text": "Increase in population density"}, {"marker": "B", "text": "Decrease in population density"}, {"marker": "C", "text": "Immediate extinction"}, {"marker": "D", "text": "Zero growth"}], "answerIndex": 0, "explanation": "Both natality (births) and immigration add individuals, driving an increase in population density.", "num": 53},
+      {"topic": "Population Growth Models", "tag": "NEET 2017", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2017 Biology Paper", "stem": "A population growing in an environment with limited resources initially shows a slow:", "extras": [], "options": [{"marker": "A", "text": "Lag phase"}, {"marker": "B", "text": "Asymptote"}, {"marker": "C", "text": "Exponential burst"}, {"marker": "D", "text": "Decline phase"}], "answerIndex": 0, "explanation": "Logistic growth begins with an initial lag phase as individuals adapt to the habitat before accelerating.", "num": 54},
+      {"topic": "Population Interactions: Mutualism", "tag": "NEET 2016", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2016 Biology Paper", "stem": "Which of the following is NOT an example of mutualism?", "extras": [], "options": [{"marker": "A", "text": "Cattle egret and grazing cattle"}, {"marker": "B", "text": "Fungus and photosynthetic alga in lichen"}, {"marker": "C", "text": "Mycorrhizae and plant roots"}, {"marker": "D", "text": "Fig flower and wasp"}], "answerIndex": 0, "explanation": "Cattle egret and cattle is commensalism (+, 0). The other three are mutualisms (+, +).", "num": 55},
+      {"topic": "Population Interactions: Predation", "tag": "AIPMT 2015", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2015 Biology Paper", "stem": "Herbivores feeding on plant sap and tissues are ecologically categorized as:", "extras": [], "options": [{"marker": "A", "text": "Predators"}, {"marker": "B", "text": "Decomposers"}, {"marker": "C", "text": "Commensals"}, {"marker": "D", "text": "Amensals"}], "answerIndex": 0, "explanation": "In a broad ecological context, herbivores that eat plant parts act as predators transferring fixed energy up the food chain.", "num": 56},
+      {"topic": "Population Interactions: Competition", "tag": "AIPMT 2014", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2014 Biology Paper", "stem": "Species facing interspecific competition in nature often evolve mechanisms that promote:", "extras": [], "options": [{"marker": "A", "text": "Coexistence rather than exclusion"}, {"marker": "B", "text": "Total extinction of both species"}, {"marker": "C", "text": "Zero reproductive output"}, {"marker": "D", "text": "Immediate metamorphosis"}], "answerIndex": 0, "explanation": "Natural selection favors mechanisms like resource partitioning that promote coexistence rather than competitive exclusion.", "num": 57},
+      {"topic": "Population Attributes & Age Pyramids", "tag": "AIPMT 2013", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2013 Biology Paper", "stem": "A human population age pyramid displaying a bell shape indicates:", "extras": [], "options": [{"marker": "A", "text": "A stable population"}, {"marker": "B", "text": "A rapidly growing population"}, {"marker": "C", "text": "A declining population"}, {"marker": "D", "text": "An inverted population"}], "answerIndex": 0, "explanation": "A bell-shaped pyramid indicates that pre-reproductive and reproductive age groups are balanced, producing a stable population.", "num": 58},
+      {"topic": "Population Interactions: Parasitism", "tag": "AIPMT 2012", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2012 Biology Paper", "stem": "Which of the following parasitic organisms lives inside the red blood cells of humans?", "extras": [], "options": [{"marker": "A", "text": "Plasmodium"}, {"marker": "B", "text": "Cuscuta"}, {"marker": "C", "text": "Taenia"}, {"marker": "D", "text": "Copepod"}], "answerIndex": 0, "explanation": "The malarial parasite Plasmodium is an endoparasite that infects and reproduces within human red blood cells and liver cells.", "num": 59},
+      {"topic": "Population Growth Models", "tag": "AIPMT 2011", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2011 Biology Paper", "stem": "The maximum population density an environment can sustainably support is termed:", "extras": [], "options": [{"marker": "A", "text": "Carrying capacity (K)"}, {"marker": "B", "text": "Biotic potential"}, {"marker": "C", "text": "Intrinsic growth rate"}, {"marker": "D", "text": "Somatic index"}], "answerIndex": 0, "explanation": "Carrying capacity (K) is the environmental limit of resource availability for supporting a species.", "num": 60}
+    ];
+
+    const state = {
+      view: 'home',          // 'home' | 'kcet' | 'neet' | 'notes'
+      mode: 'doc',           // 'doc' | 'quiz'
+      showAnswers: true,     // Document mode answer badge visibility
+      activeTopic: 'All',
+      searchQuery: '',
+      kcetSelections: {},
+      neetSelections: {}
+    };
+
+    // DOM References
+    const homeView = document.getElementById('homeView');
+    const bankView = document.getElementById('bankView');
+    const notesView = document.getElementById('notesView');
+
+    const navHomeBtn = document.getElementById('navHomeBtn');
+    const navKcetBtn = document.getElementById('navKcetBtn');
+    const navNeetBtn = document.getElementById('navNeetBtn');
+    const navNotesBtn = document.getElementById('navNotesBtn');
+
+    const modeDocBtn = document.getElementById('modeDocBtn');
+    const modeQuizBtn = document.getElementById('modeQuizBtn');
+    const toggleAnswersBtn = document.getElementById('toggleAnswersBtn');
+    const resetQuizBtn = document.getElementById('resetQuizBtn');
+    const printBtn = document.getElementById('printBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    // Switch Main Views
+    function switchView(targetView) {
+      state.view = targetView;
+      homeView.classList.add('hidden');
+      bankView.classList.add('hidden');
+      notesView.classList.add('hidden');
+
+      [navHomeBtn, navKcetBtn, navNeetBtn, navNotesBtn].forEach(btn => {
+        btn.classList.remove('bg-white', 'text-emerald-700', 'shadow-xs');
+        btn.classList.add('text-slate-600');
+      });
+
+      if (targetView === 'home') {
+        homeView.classList.remove('hidden');
+        navHomeBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-xs');
+        updateHomeStats();
+      } else if (targetView === 'kcet' || targetView === 'neet') {
+        bankView.classList.remove('hidden');
+        if (targetView === 'kcet') navKcetBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-xs');
+        if (targetView === 'neet') navNeetBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-xs');
+        setupBankView();
+      } else if (targetView === 'notes') {
+        notesView.classList.remove('hidden');
+        navNotesBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-xs');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setupBankView() {
+      const isKcet = (state.view === 'kcet');
+      const bankTitle = document.getElementById('bankTitle');
+      const bankSubtitle = document.getElementById('bankSubtitle');
+
+      if (isKcet) {
+        bankTitle.textContent = "KCET Organisms & Populations Bank (" + KCET_DATA.length + " Questions)";
+        bankSubtitle.textContent = "Karnataka CET Biology Previous Year Questions (2014–2026)";
+      } else {
+        bankTitle.textContent = "NEET PYQ Organisms & Populations Bank (" + NEET_DATA.length + " Questions)";
+        bankSubtitle.textContent = "AIPMT & NEET National Entrance Previous Year Questions (2000–2026)";
+      }
+
+      state.activeTopic = 'All';
+      state.searchQuery = '';
+      searchInput.value = '';
+
+      renderTopicPills();
+      renderQuestions();
+      renderAnswerKeyMatrix();
+      updateQuizBannerScore();
+    }
+
+    function renderTopicPills() {
+      const data = (state.view === 'kcet') ? KCET_DATA : NEET_DATA;
+      const topics = ['All', ...new Set(data.map(q => q.topic))];
+      const container = document.getElementById('topicPillsContainer');
+
+      container.innerHTML = topics.map(top => {
+        const active = (state.activeTopic === top);
+        const activeClass = active ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200';
+        return '<button type="button" class="top-pill px-2.5 py-1 rounded-full font-semibold transition ' + activeClass + '" data-topic="' + top + '">' + top + '</button>';
+      }).join('');
+
+      container.querySelectorAll('.top-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.activeTopic = btn.dataset.topic;
+          renderTopicPills();
+          renderQuestions();
+        });
+      });
+    }
+
+    function getFilteredQuestions() {
+      const data = (state.view === 'kcet') ? KCET_DATA : NEET_DATA;
+      return data.filter(q => {
+        const matchTopic = (state.activeTopic === 'All' || q.topic === state.activeTopic);
+        const matchSearch = (!state.searchQuery || 
+          q.stem.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+          q.explanation.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+          q.tag.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+          q.topic.toLowerCase().includes(state.searchQuery.toLowerCase())
+        );
+        return matchTopic && matchSearch;
+      });
+    }
+
+    function renderQuestions() {
+      const questions = getFilteredQuestions();
+      const container = document.getElementById('questionsContainer');
+      const badge = document.getElementById('filteredCountBadge');
+      const total = (state.view === 'kcet') ? KCET_DATA.length : NEET_DATA.length;
+
+      badge.textContent = "Showing " + questions.length + " of " + total + " questions";
+
+      if (questions.length === 0) {
+        container.innerHTML = '<div class="p-8 text-center bg-white rounded-xl border border-slate-200 text-slate-500 text-sm">No matching questions found. Try adjusting your search query or topic filter.</div>';
+        return;
+      }
+
+      const isQuiz = (state.mode === 'quiz');
+      const showKey = state.showAnswers;
+      const userAnswers = (state.view === 'kcet') ? state.kcetSelections : state.neetSelections;
+
+      container.innerHTML = questions.map(q => {
+        const userChoice = userAnswers[q.num];
+        const hasAnswered = (userChoice !== undefined);
+        const isCorrect = (userChoice === q.answerIndex);
+
+        // Options
+        const optionsHtml = q.options.map((opt, optIdx) => {
+          const isSelected = (userChoice === optIdx);
+          const isOptCorrect = (optIdx === q.answerIndex);
+
+          if (isQuiz) {
+            let btnClass = 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50';
+            let badgeClass = 'bg-slate-100 text-slate-700';
+
+            if (hasAnswered) {
+              if (isSelected && isOptCorrect) {
+                btnClass = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-bold';
+                badgeClass = 'bg-emerald-600 text-white';
+              } else if (isSelected && !isOptCorrect) {
+                btnClass = 'border-rose-500 bg-rose-50 text-rose-900 font-bold';
+                badgeClass = 'bg-rose-600 text-white';
+              } else if (!isSelected && isOptCorrect) {
+                btnClass = 'border-emerald-400 bg-emerald-50/60 text-emerald-900';
+                badgeClass = 'bg-emerald-600 text-white';
+              } else {
+                btnClass = 'border-slate-100 bg-slate-50/50 text-slate-400 opacity-70';
+                badgeClass = 'bg-slate-200 text-slate-500';
+              }
+            }
+
+            return '<button type="button" class="opt-btn w-full text-left p-3 rounded-xl border text-xs sm:text-sm flex items-start gap-3 transition ' + btnClass + '" data-qnum="' + q.num + '" data-optidx="' + optIdx + '">' +
+                   '<span class="w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 ' + badgeClass + '">' + opt.marker + '</span>' +
+                   '<span class="leading-relaxed pt-0.5">' + opt.text.replace(/\n/g, '<br>') + '</span></button>';
+          } else {
+            let borderClass = 'border-slate-200 bg-white text-slate-800';
+            let badgeClass = 'bg-slate-100 text-slate-600';
+            if (showKey && isOptCorrect) {
+              borderClass = 'border-emerald-500 bg-emerald-50/50 font-bold text-emerald-950';
+              badgeClass = 'bg-emerald-600 text-white';
+            }
+            return '<div class="p-3 rounded-xl border text-xs sm:text-sm flex items-start gap-3 ' + borderClass + '">' +
+                   '<span class="w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 ' + badgeClass + '">' + opt.marker + '</span>' +
+                   '<span class="leading-relaxed pt-0.5">' + opt.text.replace(/\n/g, '<br>') + '</span></div>';
+          }
+        }).join('');
+
+        // Explanation Box
+        let explHtml = '';
+        if (isQuiz && hasAnswered) {
+          const statBg = isCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900';
+          const statText = isCorrect ? '✓ Correct Answer!' : '✗ Incorrect. Correct Option: ' + q.options[q.answerIndex].marker;
+
+          explHtml = '<div class="mt-4 p-4 rounded-xl border text-xs leading-relaxed ' + statBg + '">' +
+                     '<div class="font-bold mb-1">' + statText + '</div>' +
+                     '<div>' + q.explanation + '</div></div>';
+        } else if (!isQuiz && showKey) {
+          explHtml = '<div class="mt-4 p-4 rounded-xl border border-emerald-100 bg-emerald-50/50 text-slate-700 text-xs leading-relaxed">' +
+                     '<div class="font-bold text-emerald-900 mb-1">NCERT Rationale &bull; Correct Option ' + q.options[q.answerIndex].marker + ':</div>' +
+                     '<div>' + q.explanation + '</div></div>';
+        }
+
+        const isRecent = q.tag.includes('2026') || q.tag.includes('2025');
+        const tagClass = isRecent ? 'bg-amber-100 text-amber-900 border-amber-300 font-bold' : 'bg-slate-100 text-slate-700 border-slate-200 font-medium';
+
+        return '<div class="q-card bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs space-y-4" data-qnum="' + q.num + '">' +
+               '  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">' +
+               '    <div class="flex items-center gap-2">' +
+               '      <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center">Q' + q.num + '</span>' +
+               '      <span class="text-xs font-bold text-slate-800">' + q.topic + '</span>' +
+               '    </div>' +
+               '    <span class="text-[11px] px-2.5 py-0.5 rounded-full border ' + tagClass + '">' + q.tag + '</span>' +
+               '  </div>' +
+               '  <div class="text-xs sm:text-sm font-medium text-slate-900 leading-relaxed whitespace-pre-line">' + q.stem + '</div>' +
+               '  <div class="space-y-2 pt-1">' + optionsHtml + '</div>' +
+               explHtml +
+               '</div>';
+      }).join('');
+
+      if (isQuiz) {
+        container.querySelectorAll('.opt-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const qNum = parseInt(btn.dataset.qnum, 10);
+            const optIdx = parseInt(btn.dataset.optidx, 10);
+            const userAnswers = (state.view === 'kcet') ? state.kcetSelections : state.neetSelections;
+            userAnswers[qNum] = optIdx;
+            renderQuestions();
+            updateQuizBannerScore();
+            renderAnswerKeyMatrix();
+            updateHomeStats();
+          });
+        });
+      }
+    }
+
+    function renderAnswerKeyMatrix() {
+      const data = (state.view === 'kcet') ? KCET_DATA : NEET_DATA;
+      const userAnswers = (state.view === 'kcet') ? state.kcetSelections : state.neetSelections;
+      const isQuiz = (state.mode === 'quiz');
+      const matrix = document.getElementById('answerKeyMatrix');
+
+      matrix.innerHTML = data.map(q => {
+        const correctMarker = q.options[q.answerIndex].marker;
+        const userChoice = userAnswers[q.num];
+        let boxClass = 'bg-slate-100 text-slate-700 border-slate-200';
+
+        if (isQuiz && userChoice !== undefined) {
+          if (userChoice === q.answerIndex) {
+            boxClass = 'bg-emerald-600 text-white border-emerald-600';
+          } else {
+            boxClass = 'bg-rose-600 text-white border-rose-600';
+          }
+        } else if (!isQuiz && state.showAnswers) {
+          boxClass = 'bg-emerald-50 text-emerald-800 border-emerald-200';
+        }
+
+        return '<div class="border rounded-lg p-2 text-center ' + boxClass + '">' +
+               '<div class="text-[10px] opacity-75 font-mono">Q' + q.num + '</div>' +
+               '<div class="text-sm font-extrabold">' + correctMarker + '</div>' +
+               '</div>';
+      }).join('');
+    }
+
+    function updateHomeStats() {
+      const kcetAnswered = Object.keys(state.kcetSelections).length;
+      let kcetCorrect = 0;
+      Object.keys(state.kcetSelections).forEach(qNum => {
+        const q = KCET_DATA.find(item => item.num === Number(qNum));
+        if (q && state.kcetSelections[qNum] === q.answerIndex) kcetCorrect++;
+      });
+      const kcetPct = kcetAnswered ? Math.round((kcetCorrect / kcetAnswered) * 100) : 0;
+      document.getElementById('statKcetProgress').textContent = kcetAnswered + ' / ' + KCET_DATA.length;
+      document.getElementById('statKcetScore').textContent = 'Score: ' + kcetCorrect + ' correct (' + kcetPct + '%)';
+
+      const neetAnswered = Object.keys(state.neetSelections).length;
+      let neetCorrect = 0;
+      Object.keys(state.neetSelections).forEach(qNum => {
+        const q = NEET_DATA.find(item => item.num === Number(qNum));
+        if (q && state.neetSelections[qNum] === q.answerIndex) neetCorrect++;
+      });
+      const neetPct = neetAnswered ? Math.round((neetCorrect / neetAnswered) * 100) : 0;
+      document.getElementById('statNeetProgress').textContent = neetAnswered + ' / ' + NEET_DATA.length;
+      document.getElementById('statNeetScore').textContent = 'Score: ' + neetCorrect + ' correct (' + neetPct + '%)';
+    }
+
+    function updateQuizBannerScore() {
+      const banner = document.getElementById('quizScoreBanner');
+      if (state.mode !== 'quiz') {
+        banner.classList.add('hidden');
+        return;
+      }
+      banner.classList.remove('hidden');
+
+      const data = (state.view === 'kcet') ? KCET_DATA : NEET_DATA;
+      const userAnswers = (state.view === 'kcet') ? state.kcetSelections : state.neetSelections;
+
+      let attempted = 0;
+      let correct = 0;
+      let wrong = 0;
+
+      data.forEach(q => {
+        const choice = userAnswers[q.num];
+        if (choice !== undefined) {
+          attempted++;
+          if (choice === q.answerIndex) {
+            correct++;
+          } else {
+            wrong++;
+          }
+        }
+      });
+
+      const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+
+      document.getElementById('quizAttemptedCount').textContent = attempted + " / " + data.length;
+      document.getElementById('quizCorrectCount').textContent = correct;
+      document.getElementById('quizWrongCount').textContent = wrong;
+      document.getElementById('quizAccuracy').textContent = accuracy + "%";
+    }
+
+    // Event Handlers
+    navHomeBtn.addEventListener('click', () => switchView('home'));
+    navKcetBtn.addEventListener('click', () => switchView('kcet'));
+    navNeetBtn.addEventListener('click', () => switchView('neet'));
+    navNotesBtn.addEventListener('click', () => switchView('notes'));
+    document.getElementById('brandHomeBtn').addEventListener('click', () => switchView('home'));
+
+    document.getElementById('heroStartKcetBtn').addEventListener('click', () => {
+      state.mode = 'quiz';
+      updateModeButtons();
+      switchView('kcet');
+    });
+
+    document.getElementById('heroStartNeetBtn').addEventListener('click', () => {
+      state.mode = 'quiz';
+      updateModeButtons();
+      switchView('neet');
+    });
+
+    document.getElementById('heroOpenNotesBtn').addEventListener('click', () => switchView('notes'));
+
+    document.getElementById('cardKcetDocBtn').addEventListener('click', () => {
+      state.mode = 'doc';
+      updateModeButtons();
+      switchView('kcet');
+    });
+
+    document.getElementById('cardKcetQuizBtn').addEventListener('click', () => {
+      state.mode = 'quiz';
+      updateModeButtons();
+      switchView('kcet');
+    });
+
+    document.getElementById('cardNeetDocBtn').addEventListener('click', () => {
+      state.mode = 'doc';
+      updateModeButtons();
+      switchView('neet');
+    });
+
+    document.getElementById('cardNeetQuizBtn').addEventListener('click', () => {
+      state.mode = 'quiz';
+      updateModeButtons();
+      switchView('neet');
+    });
+
+    modeDocBtn.addEventListener('click', () => {
+      state.mode = 'doc';
+      updateModeButtons();
+      renderQuestions();
+      updateQuizBannerScore();
+      renderAnswerKeyMatrix();
+    });
+
+    modeQuizBtn.addEventListener('click', () => {
+      state.mode = 'quiz';
+      updateModeButtons();
+      renderQuestions();
+      updateQuizBannerScore();
+      renderAnswerKeyMatrix();
+    });
+
+    function updateModeButtons() {
+      if (state.mode === 'doc') {
+        modeDocBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-xs');
+        modeDocBtn.classList.remove('text-slate-600');
+        modeQuizBtn.classList.remove('bg-white', 'text-emerald-700', 'shadow-xs');
+        modeQuizBtn.classList.add('text-slate-600');
+        toggleAnswersBtn.classList.remove('hidden');
+      } else {
+        modeQuizBtn.classList.add('bg-white', 'text-emerald-700', 'shadow-xs');
+        modeQuizBtn.classList.remove('text-slate-600');
+        modeDocBtn.classList.remove('bg-white', 'text-emerald-700', 'shadow-xs');
+        modeDocBtn.classList.add('text-slate-600');
+        toggleAnswersBtn.classList.add('hidden');
+      }
+    }
+
+    toggleAnswersBtn.addEventListener('click', () => {
+      state.showAnswers = !state.showAnswers;
+      toggleAnswersBtn.textContent = state.showAnswers ? 'Hide Answer Badges' : 'Show Answer Badges';
+      renderQuestions();
+      renderAnswerKeyMatrix();
+    });
+
+    resetQuizBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to reset your practice answers for this section?')) {
+        if (state.view === 'kcet') {
+          state.kcetSelections = {};
+        } else {
+          state.neetSelections = {};
+        }
+        renderQuestions();
+        updateQuizBannerScore();
+        renderAnswerKeyMatrix();
+        updateHomeStats();
+      }
+    });
+
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      state.searchQuery = e.target.value.trim();
+      renderQuestions();
+    });
+
+    // Initialize Default State
+    switchView('home');
+  </script>
+</body>
+</html>
